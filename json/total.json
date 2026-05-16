@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Investment",
+        "url": "https://www.direct.aviva.co.uk/wealth/InvestmentChoice/InvestmentTrustSearch",
+        "total": 14
+    },
+    {
+        "name": "ETF",
+        "url": "https://www.direct.aviva.co.uk/wealth/InvestmentChoice/ExchangeTradedFundSearch",
+        "total": 94
+    },
+    {
+        "name": "MF",
+        "url": "https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList",
+        "total": 504
+    }
+]

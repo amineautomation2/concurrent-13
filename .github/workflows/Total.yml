@@ -1,0 +1,30 @@
+name: Aviva Total Pages
+
+on:
+  workflow_call:
+  workflow_dispatch:
+
+jobs:
+  worker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v6
+
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12.3'
+
+      - name: Install Dependencies
+        run: pip install -r requirements.txt
+
+      - name: Scrape URLs Chunk
+        run: python main.py --total
+
+      - name: Upload MF Partial Data
+        uses: actions/upload-artifact@v6
+        with:
+          name: aviva-total
+          path: json/total.json
+          if-no-files-found: error

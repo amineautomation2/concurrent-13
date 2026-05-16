@@ -1,0 +1,50 @@
+name: Orchestrator
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "38 10 1 */3 *"
+
+env:
+  IDLE_TIME: 90
+
+jobs:
+  run-aviva-total-workflow:
+    uses: ./.github/workflows/Total.yml
+
+  wait-after-total:
+    needs: run-aviva-total-workflow
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - run: sleep ${{ env.IDLE_TIME }}
+
+  run-investment-workflow:
+    needs: wait-after-total
+    uses: ./.github/workflows/Investment.yml
+
+  wait-after-investment:
+    needs: run-investment-workflow
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - run: sleep ${{ env.IDLE_TIME }}
+
+  run-etf-workflow:
+   needs: wait-after-investment
+   uses: ./.github/workflows/ETF.yml
+ 
+  wait-after-etf:
+    needs: run-etf-workflow
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - run: sleep ${{ env.IDLE_TIME }}
+
+  run-mf-workflow:
+   needs: wait-after-etf
+   uses: ./.github/workflows/MF.yml
+ 
+  run-email-workflow:
+    needs: run-mf-workflow
+    uses: ./.github/workflows/Email.yml
+    secrets: inherit
