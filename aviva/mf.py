@@ -7,12 +7,11 @@ from pypdf import PdfReader
 import io
 
 
-def aviva_mf_runner(id_w: int, max_w: int, funds: list[dict] = []) -> list[dict]:
+def aviva_mf_runner(funds: list[dict] = []) -> list[dict]:
     xlsx = get_xlsx_filepath("aviva.xlsx")
     if len(funds) == 0:
         funds = get_xlsx_data(xlsx, "MF")
-    funds_per_w = funds[id_w::max_w]
-    funds_kiid_w = aviva_kiid_per_worker(funds_per_w=funds_per_w)
+    funds_kiid_w = aviva_kiid_per_worker(funds_per_w=funds)
     for fund in funds_kiid_w:
         isin = isin_from_pdf(fund["url_kiid"])
         fund.update(dict(isin=isin))
@@ -28,7 +27,6 @@ def aviva_kiid_per_worker(funds_per_w: list[dict]) -> list[dict]:
     driver.maximize_window()
     wait = WebDriverWait(driver, 5)
 
-    funds = []
     for fund in funds_per_w:
         driver.get(fund["url"])
 
@@ -39,7 +37,7 @@ def aviva_kiid_per_worker(funds_per_w: list[dict]) -> list[dict]:
             fund.update(dict(url_kiid=url_kiid))
         delay(3, 5)
     driver.quit()
-    return funds
+    return funds_per_w
 
 
 def isin_from_pdf(url: str) -> str:
