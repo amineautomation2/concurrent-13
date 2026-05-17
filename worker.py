@@ -37,7 +37,7 @@ def write_csv_by_id(
 ) -> None:
     filepath = os.path.join("csv", filename)
     with open(filepath, "w+", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=fields)
+        writer = csv.DictWriter(f, fieldnames=fields, extrasaction="ignore")
         writer.writeheader()
         writer.writerows(data)
         print(f"file {filename} created.")

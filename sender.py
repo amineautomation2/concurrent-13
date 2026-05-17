@@ -21,7 +21,7 @@ def send_email(platform: str):
     EMAIL_FROM = os.environ.get('EMAIL_USERNAME')
     EMAIL_TO = os.environ.get('EMAIL_DEV')
     PASSWORD = os.environ.get('EMAIL_PASSWORD')
-    filename = "quilter.xlsx"
+    filename = "aviva.xlsx"
     FILE = get_xlsx_filepath(filename)
     # Create Message
     msg = EmailMessage()

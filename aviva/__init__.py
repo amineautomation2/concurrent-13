@@ -1,8 +1,9 @@
 import re
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
-from utils import find_element_or_none, isin_from_text, setup_driver, delay, write_json, get_fund_type_total
-from worker import write_csv_by_id
+from aviva.mf import aviva_mf_runner
+from utils import find_element_or_none, isin_from_text, setup_driver, delay, write_json, get_fund_type_total, get_xlsx_filepath
+from worker import get_xlsx_data, write_csv_by_id
 
 
 def aviva_runner(id_w: int, max_w: int, sheet: str):
@@ -27,13 +28,20 @@ def aviva_runner(id_w: int, max_w: int, sheet: str):
             worker_data = runner_config["total"][id_w::max_w]
             config = dict(worker_data=worker_data, url=url)
             runner_config.update(config)
+            funds = aviva_result_per_worker(
+                base_url=runner_config["url"], total_per_w=runner_config["worker_data"])
+            delay(60, 90)
+            aviva_mf_runner(id_w=id_w, max_w=max_w, funds=funds)
+            write_csv_by_id(csv_out, funds, ["name", "isin", "url"])
+
+            return
 
     funds = aviva_result_per_worker(
         base_url=runner_config["url"], total_per_w=runner_config["worker_data"])
     write_csv_by_id(csv_out, funds, ["name", "isin", "url"])
 
 
-def aviva_result_per_worker(base_url: str, total_per_w: list[int]) -> list[dict]:
+def aviva_result_per_worker(base_url: str, total_per_w: list[int], is_MF: bool = False) -> list[dict]:
     driver = setup_driver(True)
     driver.maximize_window()
     wait = WebDriverWait(driver, 10)
@@ -61,7 +69,7 @@ def aviva_result_per_worker(base_url: str, total_per_w: list[int]) -> list[dict]
                 By.XPATH, './div[2]/div[1]/div/a').get_attribute('href')
             f.update(dict(name=name))
             if url:
-                isin = isin_from_text(url)
+                isin = isin_from_text(url) if not is_MF else ""
                 f.update(dict(url=url, isin=isin))
             funds.append(f)
         delay(3, 5)
