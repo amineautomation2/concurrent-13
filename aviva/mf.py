@@ -74,7 +74,6 @@ def isin_from_pdf(url: str) -> str:
         return ""
 
     response = fetch_with_backoff(url, headers=headers, cookies=cookies)
-    print(response)
     if response:
         if response.content:
             try:
