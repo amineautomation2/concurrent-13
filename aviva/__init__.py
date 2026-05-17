@@ -31,8 +31,8 @@ def aviva_runner(id_w: int, max_w: int, sheet: str):
             funds = aviva_result_per_worker(
                 base_url=runner_config["url"], total_per_w=runner_config["worker_data"])
             delay(60, 90)
-            aviva_mf_runner(id_w=id_w, max_w=max_w, funds=funds)
-            write_csv_by_id(csv_out, funds, ["name", "isin", "url"])
+            isin_funds = aviva_mf_runner(id_w=id_w, max_w=max_w, funds=funds)
+            write_csv_by_id(csv_out, isin_funds, ["name", "isin", "url"])
 
             return
 

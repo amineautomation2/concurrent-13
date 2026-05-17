@@ -7,7 +7,7 @@ from pypdf import PdfReader
 import io
 
 
-def aviva_mf_runner(id_w: int, max_w: int, funds: list[dict] = []):
+def aviva_mf_runner(id_w: int, max_w: int, funds: list[dict] = []) -> list[dict]:
     xlsx = get_xlsx_filepath("aviva.xlsx")
     if len(funds) == 0:
         funds = get_xlsx_data(xlsx, "MF")
@@ -16,6 +16,7 @@ def aviva_mf_runner(id_w: int, max_w: int, funds: list[dict] = []):
     for fund in funds_kiid_w:
         isin = isin_from_pdf(fund["url_kiid"])
         fund.update(dict(isin=isin))
+    return funds_kiid_w
     # write_csv_by_id(f"aviva_{id_w}_MF.csv", funds, [
     #                "index", "name", "isin", "url"])
     # fields = ["name", "isin", "url"]
