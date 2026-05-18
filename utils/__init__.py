@@ -69,7 +69,7 @@ def get_random_user_agent() -> dict:
         "chrome": VersionRange(140, 144),  # Choose version between 125 and 129
     }
     ua = ua_generator.generate(
-        browser="chrome", platform="windows", options=options)
+        browser="chrome", platform="linux", options=options)
     ua.headers.accept_ch(
         "Sec-CH-UA-Platform-Version, Sec-CH-UA-Full-Version-List")
     # return ua.headers.get()
