@@ -1,8 +1,6 @@
 name: Run Camoufox Stealth Script
 
 on:
-  push:
-    branches: [ main ]
   workflow_dispatch: # Allows you to trigger it manually
 
 jobs:
@@ -29,7 +27,7 @@ jobs:
       run: |
         sudo apt-get update
         # xvfb provides a virtual display so the browser can initialize
-        sudo apt-get install -y xvfb libgtk-3-0 libx11-xcb1 libasound2 libdbus-glib-1-2 libxt6
+        sudo apt-get install -y xvfb libgtk-3-0 libx11-xcb1 libasound2t64 libdbus-glib-1-2 libxt6
 
     - name: Fetch Camoufox Browser Binaries
       run: |
