@@ -27,7 +27,13 @@ def aviva_mf_runner(funds: list[dict] = []) -> list[dict]:
 def aviva_kiid_per_worker(funds_per_w: list[dict]) -> list[dict]:
     driver = setup_driver(True)
     driver.maximize_window()
-    wait = WebDriverWait(driver, 5)
+    wait = WebDriverWait(driver, 3)
+
+    cookies_xpath = '//*[@id="onetrust-reject-all-handler"]'
+    cookies = find_element_or_none(wait, cookies_xpath)
+    if cookies:
+        # move_mouse_bezier(driver, cookies_xpath)
+        cookies.click()
 
     for fund in funds_per_w:
         driver.get(fund["url"])
@@ -40,7 +46,7 @@ def aviva_kiid_per_worker(funds_per_w: list[dict]) -> list[dict]:
         else:
             print("kiid not found =", fund['url'])
             fund.update(dict(url_kiid=None))
-        delay(3, 5)
+        delay(4, 7)
     driver.quit()
     return funds_per_w
 
