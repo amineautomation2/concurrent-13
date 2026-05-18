@@ -2,8 +2,8 @@ import re
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from aviva.mf import aviva_mf_runner
-from utils import find_element_or_none, isin_from_text, setup_driver, delay, write_json, get_fund_type_total, get_xlsx_filepath
-from worker import get_xlsx_data, write_csv_by_id
+from utils import find_element_or_none, isin_from_text, setup_driver, delay, write_json, get_fund_type_total
+from worker import write_csv_by_id
 
 
 def aviva_runner(id_w: int, max_w: int, sheet: str):
@@ -72,7 +72,6 @@ def aviva_result_per_worker(base_url: str, total_per_w: list[int], is_MF: bool =
                 f.update(dict(url=url, isin=isin))
             funds.append(f)
         delay(3, 5)
-        break
     driver.quit()
     return funds
 

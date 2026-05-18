@@ -1,4 +1,4 @@
-from utils import create_spreadsheet, get_xlsx_filepath
+from utils import get_xlsx_filepath
 from aviva import aviva_runner, aviva_total
 import argparse
 

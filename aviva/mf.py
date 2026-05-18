@@ -1,8 +1,7 @@
 import re
-from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
-from utils import find_element_or_none, get_xlsx_filepath, isin_from_text, save_xlsx, setup_driver, delay, get_random_user_agent, fetch_with_backoff
-from worker import get_xlsx_data, write_csv_by_id
+from utils import find_element_or_none, get_xlsx_filepath, setup_driver, delay, get_random_user_agent, fetch_with_backoff
+from worker import get_xlsx_data
 from pypdf import PdfReader
 import io
 
@@ -14,13 +13,10 @@ def aviva_mf_runner(funds: list[dict] = []) -> list[dict]:
         funds = get_xlsx_data(xlsx, "MF")
     funds_kiid_w = aviva_kiid_per_worker(funds_per_w=funds)
     for fund in funds_kiid_w:
+        isin = None
         if fund.get("url_kiid"):
             isin = isin_from_pdf(fund["url_kiid"])
-            fund.update(dict(isin=isin))
-        else:
-            print(fund)
-            fund.update(dict(isin=None))
-        break
+        fund.update(dict(isin=isin))
     return funds_kiid_w
     # write_csv_by_id(f"aviva_{id_w}_MF.csv", funds, [
     #                "index", "name", "isin", "url"])
@@ -42,9 +38,8 @@ def aviva_kiid_per_worker(funds_per_w: list[dict]) -> list[dict]:
             url_kiid = kiid_elm.get_attribute("href")
             fund.update(dict(url_kiid=url_kiid))
         else:
-            print("kiid not found @ ", fund['url'])
+            print("kiid not found =", fund['url'])
             fund.update(dict(url_kiid=None))
-        break
         delay(3, 5)
     driver.quit()
     return funds_per_w
