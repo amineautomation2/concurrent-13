@@ -72,6 +72,7 @@ def aviva_result_per_worker(base_url: str, total_per_w: list[int], is_MF: bool =
                 f.update(dict(url=url, isin=isin))
             funds.append(f)
         delay(3, 5)
+        break
     driver.quit()
     return funds
 
