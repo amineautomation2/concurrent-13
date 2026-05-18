@@ -8,13 +8,19 @@ import io
 
 
 def aviva_mf_runner(funds: list[dict] = []) -> list[dict]:
-    xlsx = get_xlsx_filepath("aviva.xlsx")
     if len(funds) == 0:
+        print("empty funds.")
+        xlsx = get_xlsx_filepath("aviva.xlsx")
         funds = get_xlsx_data(xlsx, "MF")
     funds_kiid_w = aviva_kiid_per_worker(funds_per_w=funds)
     for fund in funds_kiid_w:
-        isin = isin_from_pdf(fund["url_kiid"])
-        fund.update(dict(isin=isin))
+        if fund.get("url_kiid"):
+            isin = isin_from_pdf(fund["url_kiid"])
+            fund.update(dict(isin=isin))
+        else:
+            print(fund)
+            fund.update(dict(isin=None))
+        break
     return funds_kiid_w
     # write_csv_by_id(f"aviva_{id_w}_MF.csv", funds, [
     #                "index", "name", "isin", "url"])
@@ -35,6 +41,10 @@ def aviva_kiid_per_worker(funds_per_w: list[dict]) -> list[dict]:
         if kiid_elm:
             url_kiid = kiid_elm.get_attribute("href")
             fund.update(dict(url_kiid=url_kiid))
+        else:
+            print("kiid not found @ ", fund['url'])
+            fund.update(dict(url_kiid=None))
+        break
         delay(3, 5)
     driver.quit()
     return funds_per_w
