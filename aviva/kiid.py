@@ -69,10 +69,10 @@ def parse_url_list(data_list: List[Dict]) -> List[Dict]:
 
     try:
         page = browser.new_page()
-        page.set_default_navigation_timeout(10000)
+        page.set_default_navigation_timeout(20000)
 
         for idx, item in enumerate(data_list, start=1):
-            if idx % 30 == 0:
+            if idx % 50 == 0:
                 page.wait_for_timeout(10 * 1000)
             url = item.get("url")
             if not url:
@@ -80,19 +80,19 @@ def parse_url_list(data_list: List[Dict]) -> List[Dict]:
                 continue
 
             try:
-                print(f"[{idx}] Processing: {url}")
-
+                print(f"[{idx}/{len(data_list)}] Processing: {url}")
+                page.route("**/geolocation.onetrust.com/**",
+                           lambda route: route.abort())
                 # Randomized typing/scroll telemetry wait times to bypass tracking AI
-                page.wait_for_timeout(random.randint(2000, 4500))
+                page.wait_for_timeout(random.randint(2000, 3000))
 
                 # Execute underlying route traversal safely
-                page.goto(url, wait_until="domcontentloaded", timeout=10000)
+                page.goto(url, wait_until="domcontentloaded", timeout=20000)
 
                 # Wait for internal API responses to resolve page components
-                page.wait_for_timeout(2000)
+                page.wait_for_timeout(random.randint(1000, 2000))
 
                 # Clean up extracted DOM content and map directly back to the original dictionary
-
                 kiid_url = None
                 href = page.locator(
                     "a[title='Link to KIID']").get_attribute("href")

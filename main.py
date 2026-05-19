@@ -1,4 +1,6 @@
 import argparse
+from re import I
+import time
 from aviva.kiid import get_kiid_url
 from utils import get_xlsx_filepath
 from aviva import aviva_runner, aviva_total
@@ -41,7 +43,10 @@ def main():
 
 
 if __name__ == "__main__":
+    start = time.perf_counter()
     main()
+    elapsed = time.perf_counter() - start
+    print(f"Execution time: {elapsed:.2f} seconds.")
     # create_spreadsheet("aviva.xlsx",
     # ["Investment", "ETF", "MF"],
     # ["Name", "ISIN", "URL"],
