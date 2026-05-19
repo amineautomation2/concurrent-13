@@ -100,7 +100,6 @@ def parse_url_list(data_list: List[Dict]) -> List[Dict]:
 
             except Exception as e:
                 print(f"⚠️ Error occurred crawling entry [{idx}]: {e}")
-            break
 
     finally:
         print("Crawl complete. Securing background engine context.")
@@ -177,7 +176,6 @@ def get_kiid_url(id_w, max_w):
         if data.get("kiid"):
             isin = isin_from_pdf(data["kiid"])
             data.update(dict(isin=isin))
-        break
 
     # save worker data to csv
     out = f"aviva_{id_w}_KIID.csv"
