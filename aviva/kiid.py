@@ -72,6 +72,8 @@ def parse_url_list(data_list: List[Dict]) -> List[Dict]:
         page.set_default_navigation_timeout(10000)
 
         for idx, item in enumerate(data_list, start=1):
+            if idx % 30 == 0:
+                page.wait_for_timeout(10 * 1000)
             url = item.get("url")
             if not url:
                 print(f"[{idx}] Skipping empty or invalid entry URL data format.")
@@ -84,7 +86,7 @@ def parse_url_list(data_list: List[Dict]) -> List[Dict]:
                 page.wait_for_timeout(random.randint(2000, 4500))
 
                 # Execute underlying route traversal safely
-                page.goto(url, wait_until="domcontentloaded", timeout=60000)
+                page.goto(url, wait_until="domcontentloaded", timeout=10000)
 
                 # Wait for internal API responses to resolve page components
                 page.wait_for_timeout(2000)
