@@ -43,7 +43,7 @@ jobs:
         run: rm -rf csv/*_KIID.csv
       
       - name: Scrape URLs Chunk
-        run: python main.py --id ${{ matrix.chunk }} --max 3 --kiid
+        run: python main.py --id ${{ matrix.chunk }} --max 6 --kiid
 
       - name: Upload KIID Partial Data
         uses: actions/upload-artifact@v6
