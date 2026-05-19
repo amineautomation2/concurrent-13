@@ -16,8 +16,7 @@ jobs:
       fail-fast: false
       max-parallel: 3
       matrix:
-        #chunk: [0, 1, 2, 3, 4, 5]
-        chunk: [0]
+        chunk: [0, 1, 2, 3, 4, 5]
     
     steps:
       - name: Checkout Code
@@ -40,7 +39,7 @@ jobs:
         run: rm -rf csv/*_KIID.csv
       
       - name: Scrape URLs Chunk
-        run: python main.py --id ${{ matrix.chunk }} --max 1 --kiid
+        run: python main.py --id ${{ matrix.chunk }} --max 3 --kiid
 
       - name: Upload KIID Partial Data
         uses: actions/upload-artifact@v6
