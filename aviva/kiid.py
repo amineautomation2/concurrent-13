@@ -180,6 +180,6 @@ def get_kiid_url(id_w, max_w):
         break
 
     # save worker data to csv
-    out = f"avia_{id_w}_KIID.csv"
+    out = f"aviva_{id_w}_KIID.csv"
     write_csv_by_id(out, updated_data_per_worker, [
                     "index", "name", "isin", "url"])
