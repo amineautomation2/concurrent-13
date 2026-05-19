@@ -37,6 +37,10 @@ def check_nowsecure() -> bool:
         page.screenshot(path="nowsecure_diagnostic.png")
         print("Diagnostic screen snapshot saved to nowsecure_diagnostic.png")
 
+        print("🕵️ Running CloakBrowser diagnostic against creepjs.org...")
+        page.goto("https://creepjs.org/", wait_until="commit", timeout=60000)
+        page.screenshot(path="creepjs.png")
+
     except Exception as e:
         print(f"⚠️ Diagnostic error encountered: {e}")
     finally:

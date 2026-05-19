@@ -31,5 +31,7 @@ jobs:
         uses: actions/upload-artifact@v6
         with:
           name: nowcheck
-          path: nowsecure_diagnostic.png
+          path: |
+            nowsecure_diagnostic.png
+            creepjs.png
           if-no-files-found: error
