@@ -1,7 +1,6 @@
 import re
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
-from aviva.mf import aviva_mf_runner
 from utils import find_element_or_none, isin_from_text, setup_driver, delay, write_json, get_fund_type_total
 from worker import write_csv_by_id
 
@@ -28,12 +27,6 @@ def aviva_runner(id_w: int, max_w: int, sheet: str):
             worker_data = runner_config["total"][id_w::max_w]
             config = dict(worker_data=worker_data, url=url)
             runner_config.update(config)
-            funds = aviva_result_per_worker(
-                base_url=url, total_per_w=worker_data)
-            # delay(10, 30)
-            isin_funds = aviva_mf_runner(funds=funds)
-            write_csv_by_id(csv_out, isin_funds, ["name", "isin", "url"])
-            return
 
     funds = aviva_result_per_worker(
         base_url=runner_config["url"], total_per_w=runner_config["worker_data"])

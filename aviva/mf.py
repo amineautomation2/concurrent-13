@@ -6,24 +6,6 @@ from pypdf import PdfReader
 import io
 
 
-def aviva_mf_runner(funds: list[dict] = []) -> list[dict]:
-    if len(funds) == 0:
-        print("empty funds.")
-        xlsx = get_xlsx_filepath("aviva.xlsx")
-        funds = get_xlsx_data(xlsx, "MF")
-    funds_kiid_w = aviva_kiid_per_worker(funds_per_w=funds)
-    for fund in funds_kiid_w:
-        isin = None
-        if fund.get("url_kiid"):
-            isin = isin_from_pdf(fund["url_kiid"])
-        fund.update(dict(isin=isin))
-    return funds_kiid_w
-    # write_csv_by_id(f"aviva_{id_w}_MF.csv", funds, [
-    #                "index", "name", "isin", "url"])
-    # fields = ["name", "isin", "url"]
-    # save_xlsx(xlsx, funds, fields, "MF")
-
-
 def aviva_kiid_per_worker(funds_per_w: list[dict]) -> list[dict]:
     driver = setup_driver(True)
     driver.maximize_window()
@@ -49,55 +31,3 @@ def aviva_kiid_per_worker(funds_per_w: list[dict]) -> list[dict]:
         delay(4, 7)
     driver.quit()
     return funds_per_w
-
-
-def isin_from_pdf(url: str) -> str:
-    cookies = {
-        'ApplicationGatewayAffinityCORS': 'e1dd5c8d8f0aaac8dbef88daaa63d498',
-        'ApplicationGatewayAffinity': 'e1dd5c8d8f0aaac8dbef88daaa63d498',
-        'ASLBSA': '000308b0a98344aa5136cd97f89db34e2e86c9a9a23672c7290ae25904d97b86dce7',
-        'ASLBSACORS': '000308b0a98344aa5136cd97f89db34e2e86c9a9a23672c7290ae25904d97b86dce7',
-        'SessionSettingsID': 'b10bd8a1-4394-4e28-904f-ca4f17ec573f',
-        '__RequestVerificationToken_L0NsaWVudHMvQWR2aXNlclNpdGU1': '8HIkdl9VLWU1k8AfLnhrAfynp83GKAARqbtQDuDxc8NECcdZibKX2qkgWB66sEV0mN1gGttu34LQ0Ob06rvIMcCG-0bQlaqdS1JflaweRaI1',
-    }
-
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:150.0) Gecko/20100101 Firefox/150.0',
-        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-        'Accept-Language': 'en-US,en;q=0.9',
-        # 'Accept-Encoding': 'gzip, deflate, br, zstd',
-        'Sec-GPC': '1',
-        'Connection': 'keep-alive',
-        # 'Cookie': 'ApplicationGatewayAffinityCORS=e1dd5c8d8f0aaac8dbef88daaa63d498; ApplicationGatewayAffinity=e1dd5c8d8f0aaac8dbef88daaa63d498; ASLBSA=000308b0a98344aa5136cd97f89db34e2e86c9a9a23672c7290ae25904d97b86dce7; ASLBSACORS=000308b0a98344aa5136cd97f89db34e2e86c9a9a23672c7290ae25904d97b86dce7; SessionSettingsID=b10bd8a1-4394-4e28-904f-ca4f17ec573f; __RequestVerificationToken_L0NsaWVudHMvQWR2aXNlclNpdGU1=8HIkdl9VLWU1k8AfLnhrAfynp83GKAARqbtQDuDxc8NECcdZibKX2qkgWB66sEV0mN1gGttu34LQ0Ob06rvIMcCG-0bQlaqdS1JflaweRaI1',
-        'Upgrade-Insecure-Requests': '1',
-        'Sec-Fetch-Dest': 'document',
-        'Sec-Fetch-Mode': 'navigate',
-        'Sec-Fetch-Site': 'cross-site',
-        'Priority': 'u=0, i',
-        'Pragma': 'no-cache',
-        'Cache-Control': 'no-cache',
-        # Requests doesn't support trailers
-        # 'TE': 'trailers',
-    }
-    headers.update(get_random_user_agent())
-    if len(url) == 0:
-        return ""
-
-    response = fetch_with_backoff(url, headers=headers, cookies=cookies)
-    if response:
-        if response.content:
-            try:
-                pdf_bytes = io.BytesIO(response.content)
-                reader = PdfReader(pdf_bytes)
-                text = ""
-                for page in reader.pages:
-                    text += page.extract_text() or ""
-            except Exception as e:
-                print(f"[{url}]isin_from_pdf: ", e)
-                return ""
-
-            isin_pattern = r"[A-Z]{2}[A-Z0-9]{9}[0-9]"
-            isin = re.findall(isin_pattern, text)
-            if len(isin) > 0:
-                return isin[0]
-    return ""

@@ -1,0 +1,35 @@
+name: Check Stealth
+
+on:
+  workflow_dispatch:
+
+jobs:
+  worker:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v6
+
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12.3'
+
+      - name: Install Dependencies
+        run: pip install -r requirements.txt
+
+      - name: Install System and Virtual Framebuffer Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libnspr4 libnss3 libatk1.0-0 libatk-bridge2.0-0 libcups2 libdrm2 libxkbcommon0 libxcomposite1 libxdamage1 libxrandr2 libgbm1 libasound2t64
+
+      - name: Test stealth
+        run: python stealth.py
+
+      - name: Upload KIID Partial Data
+        uses: actions/upload-artifact@v6
+        with:
+          name: nowcheck
+          path: nowsecure_diagnostic.png
+          if-no-files-found: error

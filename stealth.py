@@ -1,37 +1,48 @@
-import random
-from playwright.sync_api import sync_playwright
-from camoufox.utils import launch_options
+from cloakbrowser import launch
 
-with sync_playwright() as p:
-    # 1. Randomize the operating system fingerprint on each run
-    target_os = random.choice(["windows", "macos", "linux"])
 
-    options = launch_options(
+def check_nowsecure() -> bool:
+    """
+    Dedicated diagnostic function targeting nowsecure.nl.
+    Launches CloakBrowser to verify if the custom C++ patched binary 
+    successfully clears Cloudflare challenges without automation stalls.
+    """
+    print("🕵️ Running CloakBrowser diagnostic against nowsecure.nl...")
+
+    # Launch CloakBrowser's stealth Chromium build
+    browser = launch(
         headless=True,
-        os=target_os,
-        block_images=True,  # Saves bandwidth on GitHub Actions
-
-        # proxy={
-        #    "server": "http://your-residential-proxy-address.com:8000",
-        #    "username": "your_username",
-        #    "password": "your_password"
-        # }
+        humanize=True,
+        args=["--no-sandbox", "--disable-dev-shm-usage"]
     )
 
-    browser = p.firefox.launch(**options)
-    context = browser.new_context()
-    context.on("pageerror", lambda exc: None)  # type: ignore
+    is_successful = False
+    try:
+        page = browser.new_page()
+        page.goto("https://nowsecure.nl", wait_until="commit", timeout=60000)
 
-    page = context.new_page()
+        # Settle window to let Cloudflare Turnstile token evaluation finish
+        page.wait_for_timeout(6000)
 
-    # 3. Add a slight human-like delay before navigating
-    page.wait_for_timeout(random.randint(500, 2000))
+        page_title = page.title()
+        print(f"Captured Diagnostic Title: '{page_title}'")
 
-    url = "https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BDR8GG5/SelfSelectFund"
-    page.goto(url, wait_until="commit")
+        if "Cloudflare" in page_title or not page_title:
+            print("❌ Diagnostic Verdict: Blocked or suspended by Turnstile.")
+        else:
+            print("✅ Diagnostic Verdict: Clean bypass! Browser stayed hidden.")
+            is_successful = True
 
-    # 4. Give Akamai's background scripts time to process smoothly
-    page.wait_for_timeout(2000)
+        # Capture verification snapshot safely
+        page.screenshot(path="nowsecure_diagnostic.png")
+        print("Diagnostic screen snapshot saved to nowsecure_diagnostic.png")
 
-    print("Page Title:", page.title())
-    browser.close()
+    except Exception as e:
+        print(f"⚠️ Diagnostic error encountered: {e}")
+    finally:
+        browser.close()
+
+    return is_successful
+
+
+check_nowsecure()

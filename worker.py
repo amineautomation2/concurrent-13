@@ -74,12 +74,14 @@ def add_dummy_isin(data: list[dict]) -> list[dict]:
     return new_data
 
 
-def merge_csv_to_xlsx(xlsx_out: str, fields: list[str], sheet: str):
+def merge_csv_to_xlsx(xlsx_out: str, fields: list[str], sheet: str, pattern: str = ""):
     # xlsx_in = os.path.join(os.getcwd(), "spreadsheet", "hl.xlsx")
     combined_data = []
     csv_dir = os.path.join(os.getcwd(), "csv")
+    if pattern == "":
+        pattern = sheet
     for filename in os.listdir(csv_dir):
-        if filename.endswith(f"{sheet}.csv"):
+        if filename.endswith(f"{pattern}.csv"):
             file_path = os.path.join(csv_dir, filename)
             data = read_csv(file_path)
             if data:

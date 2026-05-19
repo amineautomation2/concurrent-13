@@ -63,13 +63,13 @@ def isin_from_text(text: str) -> str:
     return ""
 
 
-def get_random_user_agent() -> dict:
+def get_random_user_agent(platform: list[str] = ["windows"]) -> dict:
     options = OptionsUA()
     options.version_ranges = {
         "chrome": VersionRange(140, 144),  # Choose version between 125 and 129
     }
     ua = ua_generator.generate(
-        browser="chrome", platform="linux", options=options)
+        browser="chrome", platform=platform, options=options)
     ua.headers.accept_ch(
         "Sec-CH-UA-Platform-Version, Sec-CH-UA-Full-Version-List")
     # return ua.headers.get()
