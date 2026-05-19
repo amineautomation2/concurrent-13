@@ -87,7 +87,7 @@ def parse_url_list(data_list: List[Dict]) -> List[Dict]:
                 page.wait_for_timeout(random.randint(2000, 3000))
 
                 # Execute underlying route traversal safely
-                page.goto(url, wait_until="domcontentloaded", timeout=20000)
+                page.goto(url, wait_until="commit", timeout=20000)
 
                 # Wait for internal API responses to resolve page components
                 page.wait_for_timeout(random.randint(1000, 2000))
