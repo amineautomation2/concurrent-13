@@ -41,7 +41,7 @@ def check_nowsecure() -> bool:
         page.goto("https://creepjs.org/checker",
                   wait_until="commit", timeout=60000)
         page.wait_for_timeout(20000)
-        page.screenshot(path="creepjs.png")
+        page.screenshot(path="creepjs.png", full_page=True)
 
     except Exception as e:
         print(f"⚠️ Diagnostic error encountered: {e}")
