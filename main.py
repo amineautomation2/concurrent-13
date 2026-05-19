@@ -1,5 +1,4 @@
 import argparse
-from re import I
 import time
 from aviva.kiid import get_kiid_url
 from utils import get_xlsx_filepath

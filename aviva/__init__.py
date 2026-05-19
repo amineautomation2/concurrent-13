@@ -1,4 +1,4 @@
-import re
+from re import compile, findall
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from utils import find_element_or_none, isin_from_text, setup_driver, delay, write_json, get_fund_type_total
@@ -61,8 +61,15 @@ def aviva_result_per_worker(base_url: str, total_per_w: list[int], is_MF: bool =
                 By.XPATH, './div[2]/div[1]/div/a').get_attribute('href')
             f.update(dict(name=name))
             if url:
-                isin = isin_from_text(url) if not is_MF else ""
-                f.update(dict(url=url, isin=isin))
+                if not is_MF:
+                    isin = isin_from_text(url)
+                    f.update(dict(url=url, isin=isin))
+                else:
+                    sedol_re = compile(r"[A-Z0-9]{7}")
+                    sedol = sedol_re.findall(url)
+                    if len(sedol) == 1:
+                        sedol = sedol[0]
+                    f.update(dict(url=url, isin=sedol))
             funds.append(f)
         delay(3, 5)
     driver.quit()
@@ -100,7 +107,7 @@ def aviva_total() -> None:
         total_pages_elm = find_element_or_none(
             wait, '//p[@data-qa-text="showingPage"]')
         if total_pages_elm:
-            total_pages_re = re.findall(r'\d+$', total_pages_elm.text)
+            total_pages_re = findall(r'\d+$', total_pages_elm.text)
             if len(total_pages_re) == 1:
                 total_pages = int(total_pages_re[0])
         investment.update(dict(total=total_pages))

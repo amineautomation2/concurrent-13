@@ -69,11 +69,9 @@ def parse_url_list(data_list: List[Dict]) -> List[Dict]:
 
     try:
         page = browser.new_page()
-        page.set_default_navigation_timeout(20000)
-
+        page.set_default_navigation_timeout(10000)
+        timeout_counter = 0
         for idx, item in enumerate(data_list, start=1):
-            if idx % 50 == 0:
-                page.wait_for_timeout(10 * 1000)
             url = item.get("url")
             if not url:
                 print(f"[{idx}] Skipping empty or invalid entry URL data format.")
@@ -83,16 +81,11 @@ def parse_url_list(data_list: List[Dict]) -> List[Dict]:
                 print(f"[{idx}/{len(data_list)}] Processing: {url}")
                 page.route("**/geolocation.onetrust.com/**",
                            lambda route: route.abort())
-                # Randomized typing/scroll telemetry wait times to bypass tracking AI
+
                 page.wait_for_timeout(random.randint(2000, 3000))
+                page.goto(url, wait_until="commit", timeout=10000)
+                page.wait_for_timeout(random.randint(1500, 2000))
 
-                # Execute underlying route traversal safely
-                page.goto(url, wait_until="commit", timeout=20000)
-
-                # Wait for internal API responses to resolve page components
-                page.wait_for_timeout(random.randint(1000, 2000))
-
-                # Clean up extracted DOM content and map directly back to the original dictionary
                 kiid_url = None
                 href = page.locator(
                     "a[title='Link to KIID']").get_attribute("href")
@@ -102,6 +95,14 @@ def parse_url_list(data_list: List[Dict]) -> List[Dict]:
 
             except Exception as e:
                 print(f"⚠️ Error occurred crawling entry [{idx}]: {e}")
+                if timeout_counter == 5:
+                    page.screenshot(
+                        path="screenshot/timeout.png", full_page=True)
+                    print(
+                        f"️️⚠️ Max timeout[{timeout_counter}] reached, gracefully exit.")
+                    browser.close()
+                    return []
+                timeout_counter += 1
 
     finally:
         print("Crawl complete. Securing background engine context.")

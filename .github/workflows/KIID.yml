@@ -91,6 +91,14 @@ jobs:
           path: spreadsheet
           if-no-files-found: error
 
+      - name: Upload screenshots
+        uses: actions/upload-artifact@v4
+        if: always()  # Ensures this runs even if the previous test step failed
+        with:
+          name: test-screenshots
+          path: cypress/screenshots/  # Replace with your screenshot path
+          if-no-files-found: ignore   
+
       - name: Commit and push changes
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
