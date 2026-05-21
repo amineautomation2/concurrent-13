@@ -1,7 +1,7 @@
 import argparse
 import time
 from aviva.total import aviva_total
-from utils import clean_spreadsheet, get_xlsx_filepath
+from utils import clean_spreadsheet, create_spreadsheet, get_xlsx_filepath
 from aviva import aviva_runner
 from worker import merge_csv_to_xlsx
 
@@ -16,6 +16,7 @@ def main():
     parser.add_argument("--kiid", action="store_true")
     args = parser.parse_args()
     xlsx = get_xlsx_filepath("aviva.xlsx")
+    # create_spreadsheet(xlsx, ["Investment", "ETF", "MF"], ["Name", "ISIN", "URL"], col_width=35)
     if args.total:
         clean_spreadsheet(xlsx)
         aviva_total()

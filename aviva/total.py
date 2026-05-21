@@ -1,9 +1,9 @@
 import time
+from curl_cffi import ProxySpec, requests as cloaked_requests
 from cloakbrowser import launch
 import random
 from re import findall
 from utils import delay, write_json
-from aviva import get_current_exit_ip
 
 
 def aviva_total() -> None:
@@ -79,3 +79,20 @@ def aviva_total() -> None:
 
         delay(5, 8)
     write_json("json/total.json", investment_types)
+
+
+def get_current_exit_ip(proxy_url) -> str | None:
+    """Checks the active exit IP from the SOCKS5 port using curl_cffi."""
+    socks_proxies = ProxySpec({"http": proxy_url, "https": proxy_url})
+    try:
+        response = cloaked_requests.get(
+            "https://api.ipify.org",
+            proxies=socks_proxies,
+            impersonate="chrome",
+            timeout=8
+        )
+        if response.status_code == 200:
+            return response.text.strip()
+    except:
+        return None
+    return None

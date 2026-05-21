@@ -43,20 +43,3 @@ def aviva_runner(id_w: int, max_w: int, sheet: str):
     funds = aviva_pagination_per_worker(
         base_url=runner_config["url"], total_per_w=runner_config["worker_data"], assigned_proxy=PROXY_PER_WORKER)
     write_csv_by_id(csv_out, funds, ["name", "isin", "url"])
-
-
-def get_current_exit_ip(proxy_url) -> str | None:
-    """Checks the active exit IP from the SOCKS5 port using curl_cffi."""
-    socks_proxies = ProxySpec({"http": proxy_url, "https": proxy_url})
-    try:
-        response = cloaked_requests.get(
-            "https://api.ipify.org",
-            proxies=socks_proxies,
-            impersonate="chrome",
-            timeout=8
-        )
-        if response.status_code == 200:
-            return response.text.strip()
-    except:
-        return None
-    return None

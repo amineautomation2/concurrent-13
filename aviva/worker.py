@@ -2,7 +2,7 @@ import time
 from cloakbrowser import launch
 import random
 from utils import isin_from_text
-from aviva import get_current_exit_ip
+from aviva.total import get_current_exit_ip
 
 
 def aviva_pagination_per_worker(base_url: str, total_per_w: list[int], assigned_proxy: str) -> list[dict]:

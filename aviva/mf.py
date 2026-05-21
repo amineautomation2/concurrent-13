@@ -1,7 +1,7 @@
 import time
 import random
 from cloakbrowser import launch
-from aviva import get_current_exit_ip
+from aviva.total import get_current_exit_ip
 
 
 def get_kiid_urls_per_worker(id_worker: int, funds: list[dict], assigned_proxy: str) -> list[dict]:
