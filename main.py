@@ -1,9 +1,10 @@
 import argparse
 import time
 from aviva.kiid import get_kiid_url
-from utils import get_xlsx_filepath
-from aviva import aviva_runner, aviva_total
-from worker import merge_csv_to_xlsx
+from aviva.total import aviva_total
+from utils import clean_spreadsheet, get_xlsx_filepath
+from aviva import aviva_runner
+from worker import get_xlsx_data, merge_csv_to_xlsx
 
 
 def main():
@@ -17,6 +18,7 @@ def main():
     args = parser.parse_args()
     xlsx = get_xlsx_filepath("aviva.xlsx")
     if args.total:
+        clean_spreadsheet(xlsx)
         aviva_total()
         return
 
@@ -26,19 +28,19 @@ def main():
         aviva_runner(id_w=id, max_w=max_w, sheet=args.sheet)
         return
 
-    if args.id and args.max and args.kiid:
-        id = int(args.id)
-        max_w = int(args.max)
-        get_kiid_url(id_w=id, max_w=max_w)
-        return
-
     if args.merge and args.sheet:
         merge_csv_to_xlsx(xlsx, ["name", "isin", "url"], args.sheet)
         return
 
-    if args.merge and args.kiid:
-        merge_csv_to_xlsx(xlsx, ["name", "isin", "url"], "MF", "_KIID")
-        return
+#    if args.id and args.max and args.kiids:
+#        data = get_xlsx_data(xlsx, "MF")
+#        data_per_worker = data[int(args.id)::int(args.max)]
+#        get_kiid_url(id_w=int(args.id), data_per_worker=data_per_worker)
+#        return
+
+#    if args.merge and args.kiid:
+#        merge_csv_to_xlsx(xlsx, ["name", "isin", "url"], "MF", "_KIID_URL")
+#        return
 
 
 if __name__ == "__main__":

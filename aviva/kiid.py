@@ -1,117 +1,8 @@
-import random
 import re
-from typing import List, Dict
-from cloakbrowser import launch
 from pypdf import PdfReader
 import io
-from utils import get_xlsx_filepath, fetch_with_backoff, get_random_user_agent
-from worker import get_xlsx_data, merge_csv_to_xlsx, write_csv_by_id
-
-
-def check_nowsecure() -> bool:
-    """
-    Dedicated diagnostic function targeting nowsecure.nl.
-    Launches CloakBrowser to verify if the custom C++ patched binary 
-    successfully clears Cloudflare challenges without automation stalls.
-    """
-    print("🕵️ Running CloakBrowser diagnostic against nowsecure.nl...")
-
-    # Launch CloakBrowser's stealth Chromium build
-    browser = launch(
-        headless=True,
-        humanize=True,
-        args=["--no-sandbox", "--disable-dev-shm-usage"]
-    )
-
-    is_successful = False
-    try:
-        page = browser.new_page()
-        page.goto("https://nowsecure.nl", wait_until="commit", timeout=60000)
-
-        # Settle window to let Cloudflare Turnstile token evaluation finish
-        page.wait_for_timeout(6000)
-
-        page_title = page.title()
-        print(f"Captured Diagnostic Title: '{page_title}'")
-
-        if "Cloudflare" in page_title or not page_title:
-            print("❌ Diagnostic Verdict: Blocked or suspended by Turnstile.")
-        else:
-            print("✅ Diagnostic Verdict: Clean bypass! Browser stayed hidden.")
-            is_successful = True
-
-        # Capture verification snapshot safely
-        page.screenshot(path="nowsecure_diagnostic.png")
-        print("Diagnostic screen snapshot saved to nowsecure_diagnostic.png")
-
-    except Exception as e:
-        print(f"⚠️ Diagnostic error encountered: {e}")
-    finally:
-        browser.close()
-
-    return is_successful
-
-
-def parse_url_list(data_list: List[Dict]) -> List[Dict]:
-    """
-    Independent parsing function that isolates standard dict loops.
-    Re-uses a single CloakBrowser process context to safely crawl 
-    the provided data array and record runtime title resolutions.
-    """
-    print(
-        f"\n🚀 Starting loop process over payload array ({len(data_list)} items)...")
-
-    browser = launch(
-        headless=True,
-        humanize=True,
-        args=["--no-sandbox", "--disable-dev-shm-usage"]
-    )
-
-    try:
-        page = browser.new_page()
-        page.set_default_navigation_timeout(10000)
-        timeout_counter = 0
-        for idx, item in enumerate(data_list, start=1):
-            url = item.get("url")
-            if not url:
-                print(f"[{idx}] Skipping empty or invalid entry URL data format.")
-                continue
-
-            try:
-                print(f"[{idx}/{len(data_list)}] Processing: {url}")
-                page.route("**/geolocation.onetrust.com/**",
-                           lambda route: route.abort())
-
-                page.wait_for_timeout(random.randint(2000, 3000))
-                page.goto(url, wait_until="commit", timeout=10000)
-                page.wait_for_timeout(random.randint(1500, 2000))
-
-                kiid_url = None
-                href = page.locator(
-                    "a[title='Link to KIID']").get_attribute("href")
-                if href:
-                    kiid_url = href
-                item.update(dict(kiid=kiid_url))
-
-            except Exception as e:
-                print(f"⚠️ Error occurred crawling entry [{idx}]: {e}")
-                if timeout_counter == 5:
-                    page.screenshot(
-                        path="screenshot/timeout.png", full_page=True)
-                    print(
-                        f"️️⚠️ Max timeout[{timeout_counter}] reached, gracefully exit.")
-                    browser.close()
-                    return []
-                timeout_counter += 1
-
-    finally:
-        print("Crawl complete. Securing background engine context.")
-        browser.close()
-
-    return data_list
-
-
-# Get missing isin from xlsx
+from utils import delay, fetch_with_backoff, get_random_user_agent
+from worker import write_csv_by_id
 
 
 def isin_from_pdf(url: str) -> str:
@@ -159,28 +50,35 @@ def isin_from_pdf(url: str) -> str:
                 print(f"[{url}]isin_from_pdf: ", e)
                 return ""
 
-            isin_pattern = r"[A-Z]{2}[A-Z0-9]{9}[0-9]"
-            isin = re.findall(isin_pattern, text)
-            if len(isin) > 0:
-                return isin[0]
+            # 1. Relaxed regex to find ISINs even if they have a random space inside
+            isin_extract_rx = re.compile(
+                r"[A-Z]{2}(?:[?\s]*[A-Z0-9]){9}[?\s]*[0-9]")
+
+            # 2. Strict regex to validate after cleaning
+            isin_strict_rx = re.compile(r"^[A-Z]{2}[A-Z0-9]{9}[0-9]$")
+            matches = isin_extract_rx.findall(text)
+
+            for match in matches:
+                # Clean the extracted string by removing all spaces
+                cleaned_isin = match.replace(" ", "")
+
+                # Strictly validate
+                if isin_strict_rx.match(cleaned_isin):
+                    return cleaned_isin
     return ""
 
 
-def get_kiid_url(id_w, max_w):
-    xlsx = get_xlsx_filepath("aviva.xlsx")
-    data_xlsx = get_xlsx_data(xlsx, "MF")
-
-    # distribute data per worker
-    data_per_worker = data_xlsx[id_w::max_w]
-    updated_data_per_worker = parse_url_list(data_per_worker)
-
+def get_kiid_url(id_w: int, data_per_worker: list[dict]):
     # get isin from pdf
-    for data in updated_data_per_worker:
+    isins = []
+    for data in data_per_worker:
         if data.get("kiid"):
             isin = isin_from_pdf(data["kiid"])
-            data.update(dict(isin=isin))
-
+            isins.append(dict(name=data.get("name"),
+                         isin=isin, url=data.get("url")))
+            delay(1.5, 2.5)
+    return isins
     # save worker data to csv
-    out = f"aviva_{id_w}_KIID.csv"
-    write_csv_by_id(out, updated_data_per_worker, [
+    out = f"aviva_{id_w}_KIID_ISIN.csv"
+    write_csv_by_id(out, data_per_worker, [
                     "index", "name", "isin", "url"])
