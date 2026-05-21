@@ -6,7 +6,8 @@ on:
     - cron: "38 01 18 5 *"
 
 env:
-  IDLE_TIME: 90
+  IDLE_TIME: 20
+  #IDLE_TIME: 60
 
 jobs:
   run-aviva-total-workflow:

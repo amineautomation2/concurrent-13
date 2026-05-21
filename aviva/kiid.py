@@ -78,6 +78,8 @@ def get_kiid_url(id_w: int, data_per_worker: list[dict], proxy: str):
             isins.append(dict(name=data.get("name"),
                          isin=isin, url=data.get("url")))
             delay(1.5, 2.5)
+        # TEST
+        # break
     return isins
     # save worker data to csv
     out = f"aviva_{id_w}_KIID_ISIN.csv"

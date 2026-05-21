@@ -12,7 +12,7 @@ def aviva_runner(id_w: int, max_w: int, sheet: str):
         "total": get_fund_type_total(sheet),
 
     }
-    PROXY_PER_WORKER = f"socks5://c23aa2273d4cf55a8726:be209b0843f58c7e@gw.dataimpulse.com:1000{id_w}"
+    PROXY_PER_WORKER = f"socks5://c23aa2273d4cf55a8726__cr.gb:be209b0843f58c7e@gw.dataimpulse.com:1000{id_w}"
     match sheet:
         case "Investment":
             url = "https://www.direct.aviva.co.uk/wealth/InvestmentChoice/InvestmentTrustSearch"
@@ -31,7 +31,7 @@ def aviva_runner(id_w: int, max_w: int, sheet: str):
             runner_config.update(config)
             funds_pagination = aviva_pagination_per_worker(
                 base_url=runner_config["url"], total_per_w=runner_config["worker_data"], assigned_proxy=PROXY_PER_WORKER)
-            delay(10, 30)
+            delay(5, 10)
             funds_kiid = get_kiid_urls_per_worker(
                 id_worker=id_w, funds=funds_pagination, assigned_proxy=PROXY_PER_WORKER)
             funds_with_isin = get_kiid_url(
