@@ -5,7 +5,7 @@ from utils import delay, fetch_with_backoff, get_random_user_agent
 from worker import write_csv_by_id
 
 
-def isin_from_pdf(url: str) -> str:
+def isin_from_pdf(url: str, proxy: str) -> str:
     cookies = {
         'ApplicationGatewayAffinityCORS': 'e1dd5c8d8f0aaac8dbef88daaa63d498',
         'ApplicationGatewayAffinity': 'e1dd5c8d8f0aaac8dbef88daaa63d498',
@@ -37,7 +37,8 @@ def isin_from_pdf(url: str) -> str:
     if len(url) == 0:
         return ""
 
-    response = fetch_with_backoff(url, headers=headers, cookies=cookies)
+    response = fetch_with_backoff(
+        url, headers=headers, cookies=cookies, proxy=proxy)
     if response:
         if response.content:
             try:
@@ -68,12 +69,12 @@ def isin_from_pdf(url: str) -> str:
     return ""
 
 
-def get_kiid_url(id_w: int, data_per_worker: list[dict]):
+def get_kiid_url(id_w: int, data_per_worker: list[dict], proxy: str):
     # get isin from pdf
     isins = []
     for data in data_per_worker:
         if data.get("kiid"):
-            isin = isin_from_pdf(data["kiid"])
+            isin = isin_from_pdf(data["kiid"], proxy)
             isins.append(dict(name=data.get("name"),
                          isin=isin, url=data.get("url")))
             delay(1.5, 2.5)

@@ -2,7 +2,7 @@ from random import uniform
 import re
 from time import sleep
 import time
-from curl_cffi import requests
+from curl_cffi import ProxySpec, requests
 import random
 from pathlib import Path
 from os.path import join
@@ -183,13 +183,16 @@ def get_fund_type_total(fund_type: str) -> list[int]:
 
 
 def fetch_with_backoff(
-    url, headers=get_random_user_agent(), cookies=None, max_retries=5, base_delay=2
+    url, headers=get_random_user_agent(), cookies=None, max_retries=5, base_delay=2, proxy=""
 ):
     for attempt in range(max_retries):
         try:
             # Using curl_cffi to mimic a real browser (e.g., Chrome)
+            proxy_spec = ProxySpec(
+                {"http": proxy, "https": proxy}
+            )
             response = requests.get(
-                url, headers=headers, cookies=cookies, impersonate="chrome", timeout=10
+                url, headers=headers, cookies=cookies, impersonate="chrome", timeout=10, proxies=proxy_spec
             )
 
             # If successful, return the response

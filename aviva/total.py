@@ -7,7 +7,7 @@ from utils import delay, write_json
 
 
 def aviva_total() -> None:
-    assigned_proxy = "socks5h://c23aa2273d4cf55a8726:be209b0843f58c7e@gw.dataimpulse.com:10000"
+    assigned_proxy = "socks5://c23aa2273d4cf55a8726:be209b0843f58c7e@gw.dataimpulse.com:10000"
     investment_types: list[dict] = [
         {
             "name": "Investment",
