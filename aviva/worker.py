@@ -10,7 +10,7 @@ def aviva_pagination_per_worker(base_url: str, total_per_w: list[int], assigned_
     # PRE-FLIGHT INITIAL PROXY HEALTH GATE
     # ----------------------------------------------------
     session_ip = None
-    max_init_retries = 5
+    max_init_retries = 10
 
     for attempt in range(1, max_init_retries + 1):
         print(
@@ -23,14 +23,15 @@ def aviva_pagination_per_worker(base_url: str, total_per_w: list[int], assigned_
 
         if attempt < max_init_retries:
             # Scale backing wait periods: 15s, 30s, 45s, 60s
-            sleep_duration = attempt * 15
+            sleep_duration = attempt * 5
             print(
                 f"⚠️ Proxy port dropped or timing out. Sleeping {sleep_duration}s before re-checking...")
             time.sleep(sleep_duration)
 
     # Fatal Fail-Safe: Terminate worker before launching an unprotected browser
     if not session_ip:
-        print("❌ [Fatal] Proxy failed health validation across 5 checks. Aborting worker initialization to prevent raw IP leak.")
+        print(
+            f"❌ [Fatal] Proxy failed health validation across {max_init_retries} checks. Aborting worker initialization to prevent raw IP leak.")
         return []
 
     # Safe to spin up CloakBrowser now that proxy integrity is verified
@@ -45,7 +46,7 @@ def aviva_pagination_per_worker(base_url: str, total_per_w: list[int], assigned_
     # Explicit pointer management to control retries without dropping data
     page_index = 0
     page_retry_count = 0
-    max_page_retries = 3
+    max_page_retries = 10
 
     while page_index < len(total_per_w):
         id_page = total_per_w[page_index]
@@ -56,7 +57,7 @@ def aviva_pagination_per_worker(base_url: str, total_per_w: list[int], assigned_
         # ----------------------------------------------------
         # RUNTIME PROXY INTEGRITY MONITORING
         # ----------------------------------------------------
-        time_elapsed = time.time() - session_start_time > 10 * 60
+        time_elapsed = time.time() - session_start_time > 5 * 60
         current_ip = session_ip
         if page_index > 0:
             current_ip = get_current_exit_ip(assigned_proxy)
@@ -75,7 +76,7 @@ def aviva_pagination_per_worker(base_url: str, total_per_w: list[int], assigned_
                     except:
                         pass
 
-                    time.sleep(60)
+                    time.sleep(30)
 
                     # Attempt to completely resurrect the browser layer
                     session_ip = get_current_exit_ip(assigned_proxy)
@@ -113,8 +114,8 @@ def aviva_pagination_per_worker(base_url: str, total_per_w: list[int], assigned_
         # NAVIGATION & BEHAVIORAL HUMANIZATION
         # ----------------------------------------------------
         try:
-            time.sleep(random.uniform(4.0, 7.0))
-            page.goto(target_url, wait_until="commit", timeout=45000)
+            time.sleep(random.uniform(3.0, 5.0))
+            page.goto(target_url, wait_until="commit", timeout=60 * 1000)
 
             # Human Interaction: Target viewport random positioning coordinates
             page.mouse.move(random.randint(200, 700), random.randint(200, 600))
@@ -202,7 +203,7 @@ def aviva_pagination_per_worker_backup(base_url: str, total_per_w: list[int], as
     # Handle a dead connection or early IP shift dynamically
     # If the proxy is completely dead or rotated early, sleep for 5 minutes
     session_ip = None
-    max_init_retries = 5
+    max_init_retries = 10
 
     for attempt in range(1, max_init_retries + 1):
         print(

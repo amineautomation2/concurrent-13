@@ -10,7 +10,7 @@ def get_kiid_urls_per_worker(id_worker: int, funds: list[dict], assigned_proxy: 
     # PRE-FLIGHT INITIAL PROXY HEALTH GATE
     # ----------------------------------------------------
     session_ip = None
-    max_init_retries = 5
+    max_init_retries = 10
 
     for attempt in range(1, max_init_retries + 1):
         print(
@@ -23,7 +23,7 @@ def get_kiid_urls_per_worker(id_worker: int, funds: list[dict], assigned_proxy: 
             break
 
         if attempt < max_init_retries:
-            sleep_duration = attempt * 15
+            sleep_duration = attempt * 5
             print(
                 f"⚠️ [Worker {id_worker}] Proxy port down/timed out. Sleeping {sleep_duration}s before retry...")
             time.sleep(sleep_duration)
@@ -45,7 +45,7 @@ def get_kiid_urls_per_worker(id_worker: int, funds: list[dict], assigned_proxy: 
     # Explicit pointer management to handle mid-loop faults without losing track of funds
     fund_index = 0
     fund_retry_count = 0
-    max_fund_retries = 3
+    max_fund_retries = 10
 
     while fund_index < len(funds):
         fund = funds[fund_index]
@@ -57,7 +57,7 @@ def get_kiid_urls_per_worker(id_worker: int, funds: list[dict], assigned_proxy: 
         # RUNTIME PROXY INTEGRITY MONITORING
         # ----------------------------------------------------
         # Measure continuous time drift relative to initial context birth (10 min safety cap)
-        time_elapsed = time.time() - session_start_time > (10 * 60)
+        time_elapsed = time.time() - session_start_time > (5 * 60)
         current_ip = session_ip
         if fund_index > 0:
             current_ip = get_current_exit_ip(assigned_proxy)
@@ -78,7 +78,7 @@ def get_kiid_urls_per_worker(id_worker: int, funds: list[dict], assigned_proxy: 
                     pass
 
                 # Allow 60 seconds of cool-down time for your provider gateway to cycle nodes
-                time.sleep(60)
+                time.sleep(30)
 
                 session_ip = get_current_exit_ip(assigned_proxy)
                 if session_ip:
@@ -91,7 +91,7 @@ def get_kiid_urls_per_worker(id_worker: int, funds: list[dict], assigned_proxy: 
                 fund_retry_count = 0
                 fund_index += 1  # Increment index to step over broken links and avoid endless stalls
             else:
-                time.sleep(15)
+                time.sleep(10)
             continue
 
         # Handle normal session timeout or dynamic IP switch seamlessly
@@ -117,11 +117,11 @@ def get_kiid_urls_per_worker(id_worker: int, funds: list[dict], assigned_proxy: 
         # ----------------------------------------------------
         try:
             time.sleep(random.uniform(3.0, 5.0))
-            page.goto(url, wait_until="commit", timeout=45000)
+            page.goto(url, wait_until="commit", timeout=90 * 1000)
 
             # Human Interaction: Trigger smooth cursor landing
             page.mouse.move(random.randint(150, 600), random.randint(150, 600))
-            time.sleep(random.uniform(0.5, 1.2))
+            time.sleep(random.uniform(1, 1.2))
 
             # Human Interaction: Variable scrolling behavior to satisfy Akamai trackers
             for _ in range(random.randint(2, 3)):
@@ -216,7 +216,7 @@ def get_kiid_urls_per_worker_backup(id_worker: int, funds: list[dict], assigned_
         if not current_ip:
             print(
                 f"⚠️ [Worker {id_worker}] Proxy port dropped connection. Retrying...")
-            time.sleep(5 * 60)
+            time.sleep(2 * 60)
 
         if time_elapsed or (current_ip != session_ip):
             reason = "Max session age reached" if time_elapsed else f"Sticky IP rotated dynamically ({session_ip} -> {current_ip})"

@@ -14,9 +14,9 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-      max-parallel: 3
+      #max-parallel: 3
       matrix:
-        chunk: [0, 1, 2, 3, 4, 5, 6, 7, 8]
+        chunk: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     
     steps:
       - name: Checkout Code
@@ -34,7 +34,7 @@ jobs:
         run: rm -rf csv/*_${{ env.SHEET_NAME }}.csv
       
       - name: Scrape URLs Chunk
-        run: python main.py --id ${{ matrix.chunk }} --max 9 --sheet ${{env.SHEET_NAME}}
+        run: python main.py --id ${{ matrix.chunk }} --max 10 --sheet ${{env.SHEET_NAME}}
 
       - name: Upload ETF Partial Data
         uses: actions/upload-artifact@v6

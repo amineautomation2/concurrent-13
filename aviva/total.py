@@ -24,7 +24,7 @@ def aviva_total() -> None:
     for idx, investment in enumerate(investment_types):
         assigned_proxy = f"socks5://c23aa2273d4cf55a8726__cr.gb:be209b0843f58c7e@gw.dataimpulse.com:1000{idx}"
         session_ip = None
-        max_init_retries = 5
+        max_init_retries = 10
 
         for attempt in range(1, max_init_retries + 1):
             print(
@@ -45,7 +45,7 @@ def aviva_total() -> None:
         # Emergency Fallback: Terminate thread if the residential proxy port completely fails validation
         if not session_ip:
             print(
-                "❌ [Fatal - Worker] Proxy failed health validation across 5 passes. Aborting execution.")
+                f"❌ [Fatal - Worker] Proxy failed health validation across {max_init_retries} passes. Aborting execution.")
 
         browser = launch(headless=True, proxy=assigned_proxy,
                          geoip=True, humanize=True)
@@ -125,7 +125,7 @@ def get_current_exit_ip(proxy_url):
             "https://api.ipify.org",
             proxies=socks_proxies,
             impersonate="chrome",
-            timeout=8
+            timeout=20
         )
         if response.status_code == 200:
             return response.text.strip()
