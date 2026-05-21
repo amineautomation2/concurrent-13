@@ -1,10 +1,9 @@
 import argparse
 import time
-from aviva.kiid import get_kiid_url
 from aviva.total import aviva_total
 from utils import clean_spreadsheet, get_xlsx_filepath
 from aviva import aviva_runner
-from worker import get_xlsx_data, merge_csv_to_xlsx
+from worker import merge_csv_to_xlsx
 
 
 def main():
