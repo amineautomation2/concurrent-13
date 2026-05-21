@@ -22,7 +22,7 @@ def aviva_total() -> None:
         },
     ]
     for idx, investment in enumerate(investment_types):
-        assigned_proxy = "socks5://c23aa2273d4cf55a8726__cr.gb:be209b0843f58c7e@gw.dataimpulse.com:1000{idx}"
+        assigned_proxy = f"socks5://c23aa2273d4cf55a8726__cr.gb:be209b0843f58c7e@gw.dataimpulse.com:1000{idx}"
         session_ip = None
         max_init_retries = 5
 
