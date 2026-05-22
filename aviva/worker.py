@@ -448,6 +448,12 @@ def aviva_pagination_per_worker_except(base_url: str, total_per_w: list[int]) ->
             retry_count = 0
             proxy_rotation_count = 0
             page_count_since_break += 1  # Only count successful page loads
+            logging.info(
+                f"✅ Page {id_page} scraped successfully — "
+                f"{len(row_locators)} rows | "
+                f"progress {page_index}/{len(total_per_w)} | "
+                f"total collected {len(funds)}"
+            )
 
         # ----------------------------------------------------
         # FAILURE HANDLING: GRADUATED BACKOFF + PROXY ROTATION
