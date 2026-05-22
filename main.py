@@ -3,9 +3,9 @@ import time
 from aviva.kiid import get_kiid_url
 from aviva.mf import get_kiid_urls_per_worker
 from aviva.total import aviva_total
-from utils import clean_spreadsheet, create_spreadsheet, get_xlsx_filepath, read_json, write_json
+from utils import clean_spreadsheet, get_xlsx_filepath
 from aviva import aviva_runner
-from worker import get_data_by_worker_id, merge_csv_to_xlsx, read_csv, write_csv_by_id
+from worker import merge_csv_to_xlsx, read_csv, write_csv_by_id
 
 
 def main():
@@ -29,8 +29,6 @@ def main():
         id_w = int(args.id)
         max_w = int(args.max)
         if args.sheet == "MF":
-            # ------------------- TODO: DOWNSTREAM SHOULD HANDLE PROXY -------------------------
-            # ----------------------------------------------------------------------------------
             if args.kiid:
                 funds_pagination = []
                 csv_out = f"aviva_{id_w}_{args.sheet}_URL.csv"
@@ -49,6 +47,8 @@ def main():
                 write_csv_by_id(csv_out, funds_with_isin, [
                                 "name", "isin", "url"])
                 return
+            aviva_runner(id_w=id_w, max_w=max_w, sheet=args.sheet)
+            return
         aviva_runner(id_w=id_w, max_w=max_w, sheet=args.sheet)
         return
 
