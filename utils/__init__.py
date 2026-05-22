@@ -1,3 +1,6 @@
+from curl_cffi import requests as cloaked_requests
+import os
+import pathlib
 from random import uniform
 import re
 from time import sleep
@@ -26,6 +29,52 @@ from openpyxl.utils import get_column_letter
 import random
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
+
+
+def get_random_proxy_port_str():
+    return f"socks5://c23aa2273d4cf55a8726__cr.gb:be209b0843f58c7e@gw.dataimpulse.com:10{random.randint(0, 999):03}"
+
+
+def get_proxy_endpoint() -> dict[str, str]:
+    # Base port configuration (e.g., mapping workers to ports 10001, 10002, etc.)
+
+    attempt = 1
+    while True:
+        # 1. Build the clean standard format string for CloakBrowser
+        # browser_proxy_str = f"socks5://{username}:{password}@{endpoint_domain}:{target_port}"
+        browser_proxy_str = get_random_proxy_port_str()
+
+        # 2. Convert to 'socks5h://' to force curl_cffi to use remote DNS lookups
+        curl_proxy_str = browser_proxy_str
+        socks_proxies = ProxySpec(
+            {"http": curl_proxy_str, "https": curl_proxy_str})
+
+        print(
+            f"🔄 [Proxy Check] Testing port {browser_proxy_str} for... (Attempt {attempt})")
+
+        try:
+            # Quick network request with a strict 5-second timeout
+            response = cloaked_requests.get(
+                "https://api.ipify.org",
+                proxies=socks_proxies,
+                impersonate="chrome",
+                timeout=5
+            )
+
+            if response.status_code == 200 and response.text.strip():
+                print(
+                    f"✅ [Proxy Live] passed check. Exit IP: {response.text.strip()}")
+                # Returns the pristine socks5:// format for CloakBrowser
+                return dict(ip=response.text.strip(), proxy=browser_proxy_str)
+
+        except Exception as e:
+            print(f"⚠️ [Port Down] Port failed handshake: {e}")
+
+        # 3. Apply a small backoff pause before cycling the loop
+        sleep_time = min(attempt * 3, 10)
+        print(f"⏳ Sleeping {sleep_time}s before re-checking port...")
+        time.sleep(sleep_time)
+        attempt += 1
 
 
 def create_spreadsheet(filename, sheet_names, column_names, col_width=25):
@@ -168,8 +217,16 @@ def write_json(filename: str, data: list[dict]) -> None:
 
 
 def read_json(filename: str):
-    with open(filename, "r") as f:
-        return json.load(f)
+    project_root = Path(__file__).resolve().parent.parent
+    json_dir = os.path.join(project_root, "json")
+    if pathlib.Path.is_dir(Path(json_dir)):
+        filename = os.path.join(json_dir, filename)
+
+        if pathlib.Path.exists(Path(filename)):
+            with open(filename, "r") as f:
+                return json.load(f)
+        print("Filename doesn't exist inside json folder: ", filename)
+    print("json folder doesn't exist: ", filename)
 
 
 def get_fund_type_total(fund_type: str) -> list[int]:

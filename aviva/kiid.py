@@ -1,7 +1,8 @@
 import re
+import time
 from pypdf import PdfReader
 import io
-from utils import delay, fetch_with_backoff, get_random_user_agent
+from utils import delay, fetch_with_backoff, get_proxy_endpoint, get_random_user_agent
 from worker import write_csv_by_id
 
 
@@ -69,12 +70,21 @@ def isin_from_pdf(url: str, proxy: str) -> str:
     return ""
 
 
-def get_kiid_url(id_w: int, data_per_worker: list[dict], proxy: str):
+def get_kiid_url(id_w: int, data_per_worker: list[dict]):
     # get isin from pdf
     isins = []
+    session_start_time = time.time()
+    MAX_SESSION_TIME_SECOND = 5 * 60
+    proxy_dict = get_proxy_endpoint()
+    session_proxy = proxy_dict["proxy"]
     for data in data_per_worker:
+        session_expired = time.time() - session_start_time > MAX_SESSION_TIME_SECOND
+        if session_expired:
+            proxy_dict = get_proxy_endpoint()
+            session_proxy = proxy_dict["proxy"]
+
         if data.get("kiid"):
-            isin = isin_from_pdf(data["kiid"], proxy)
+            isin = isin_from_pdf(data["kiid"], session_proxy)
             isins.append(dict(name=data.get("name"),
                          isin=isin, url=data.get("url")))
             delay(1.5, 2.5)

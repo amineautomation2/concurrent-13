@@ -3,7 +3,7 @@ from curl_cffi import ProxySpec, requests as cloaked_requests
 from cloakbrowser import launch
 import random
 from re import findall
-from utils import delay, write_json
+from utils import delay, get_proxy_endpoint, write_json
 
 
 def aviva_total() -> None:
@@ -21,36 +21,15 @@ def aviva_total() -> None:
             "url": "https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList",
         },
     ]
+
     for idx, investment in enumerate(investment_types):
-        assigned_proxy = f"socks5://c23aa2273d4cf55a8726__cr.gb:be209b0843f58c7e@gw.dataimpulse.com:1000{idx}"
-        session_ip = None
-        max_init_retries = 10
-
-        for attempt in range(1, max_init_retries + 1):
-            print(
-                f"📡 [Worker] Verifying proxy connection... (Attempt {attempt}/{max_init_retries})")
-            session_ip = get_current_exit_ip(assigned_proxy)
-
-            if session_ip:
-                print(
-                    f"✅ [Worker] Proxy verified healthy. Active IP: {session_ip}")
-                break
-
-            if attempt < max_init_retries:
-                sleep_duration = attempt * 15
-                print(
-                    f"⚠️ [Worker] Proxy port down/timed out. Sleeping {sleep_duration}s before retry...")
-                time.sleep(sleep_duration)
-
-        # Emergency Fallback: Terminate thread if the residential proxy port completely fails validation
-        if not session_ip:
-            print(
-                f"❌ [Fatal - Worker] Proxy failed health validation across {max_init_retries} passes. Aborting execution.")
+        proxy_dict = get_proxy_endpoint()
+        session_ip = proxy_dict["ip"]
+        assigned_proxy = proxy_dict["proxy"]
 
         browser = launch(headless=True, proxy=assigned_proxy,
                          geoip=True, humanize=True)
         page = browser.new_page()
-        # Track cookie consent banner state across page loads
         cookie_accepted = False
 
         # ----------------------------------------------------
@@ -60,11 +39,11 @@ def aviva_total() -> None:
             f"📡 [{investment.get("name")}] Getting total pages.")
         try:
             # Humanized thinking pause before hitting the site
-            time.sleep(random.uniform(3.0, 5.0))
+            time.sleep(random.uniform(2.0, 4.0))
 
             # Fast-return navigation to reduce server tracker exposure window
             page.goto(investment["url"],
-                      wait_until="commit", timeout=45000)
+                      wait_until="commit", timeout=90 * 1000)
 
             # Move cursor smoothly into the reading viewport space
             page.mouse.move(random.randint(200, 700),
@@ -114,21 +93,5 @@ def aviva_total() -> None:
 
         print(
             f"🏁 Worker execution batch complete. Found {investment.get("total")} pages.")
-        delay(5, 8)
+        delay(3, 5)
     write_json("json/total.json", investment_types)
-
-
-def get_current_exit_ip(proxy_url):
-    socks_proxies = ProxySpec({"http": proxy_url, "https": proxy_url})
-    try:
-        response = cloaked_requests.get(
-            "https://api.ipify.org",
-            proxies=socks_proxies,
-            impersonate="chrome",
-            timeout=20
-        )
-        if response.status_code == 200:
-            return response.text.strip()
-    except:
-        return None
-    return None

@@ -3,21 +3,22 @@ from cloakbrowser import launch
 import random
 from curl_cffi import ProxySpec, requests as cloaked_requests
 from re import compile
-from utils import get_xlsx_filepath, save_xlsx
-from worker import get_xlsx_data
+from utils import get_xlsx_filepath, get_proxy_endpoint, read_json, save_xlsx
+from worker import get_xlsx_data, read_csv
 url = "https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B2PB2C7/SelfSelectFund"
 url = "https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/3395327/SelfSelectFund"
 xlsx = get_xlsx_filepath("aviva.xlsx")
 data = get_xlsx_data(xlsx, "MF")
 
-for fund in data:
-    sedol_re = compile(r"[A-Z0-9]{7}")
-    sedol = sedol_re.findall(fund["url"])
-    if len(sedol) == 1:
-        sedol = sedol[0]
-        fund.update(dict(sedol=sedol))
-
-save_xlsx(xlsx, data, ["name", "sedol", "url"], "MF")
+# for fund in data:
+#    sedol_re = compile(r"[A-Z0-9]{7}")
+#    sedol = sedol_re.findall(fund["url"])
+#    if len(sedol) == 1:
+#        sedol = sedol[0]
+#        fund.update(dict(sedol=sedol))
+#
+# save_xlsx(xlsx, data, ["name", "sedol", "url"], "MF")
+print(get_proxy_endpoint())
 
 
 def get_current_exit_ip(proxy_url) -> str | None:

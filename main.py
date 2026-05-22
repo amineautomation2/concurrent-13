@@ -1,9 +1,11 @@
 import argparse
 import time
+from aviva.kiid import get_kiid_url
+from aviva.mf import get_kiid_urls_per_worker
 from aviva.total import aviva_total
-from utils import clean_spreadsheet, create_spreadsheet, get_xlsx_filepath
+from utils import clean_spreadsheet, create_spreadsheet, get_xlsx_filepath, read_json, write_json
 from aviva import aviva_runner
-from worker import merge_csv_to_xlsx
+from worker import get_data_by_worker_id, merge_csv_to_xlsx, read_csv, write_csv_by_id
 
 
 def main():
@@ -14,6 +16,7 @@ def main():
     parser.add_argument("--total", action="store_true")
     parser.add_argument("--merge", action="store_true")
     parser.add_argument("--kiid", action="store_true")
+    parser.add_argument("--isin", action="store_true")
     args = parser.parse_args()
     xlsx = get_xlsx_filepath("aviva.xlsx")
     # create_spreadsheet(xlsx, ["Investment", "ETF", "MF"], ["Name", "ISIN", "URL"], col_width=35)
@@ -23,14 +26,37 @@ def main():
         return
 
     if args.id and args.max and args.sheet:
-        id = int(args.id)
+        id_w = int(args.id)
         max_w = int(args.max)
-        aviva_runner(id_w=id, max_w=max_w, sheet=args.sheet)
+        if args.sheet == "MF":
+            # ------------------- TODO: DOWNSTREAM SHOULD HANDLE PROXY -------------------------
+            # ----------------------------------------------------------------------------------
+            if args.kiid:
+                funds_pagination = []
+                csv_out = f"aviva_{id_w}_{args.sheet}_URL.csv"
+                funds_kiid = get_kiid_urls_per_worker(
+                    id_worker=id_w, funds=funds_pagination)
+                write_csv_by_id(csv_out, funds_kiid, [
+                                "name", "isin", "url", "kiid"])
+                return
+            if args.isin:
+                # load kiid_url.json
+                funds_kiid = read_csv(f"csv/aviva_{id_w}_{args.sheet}_URL.csv")
+                funds_with_isin = get_kiid_url(
+                    id_w=id_w, data_per_worker=funds_kiid)
+
+                csv_out = f"aviva_{id_w}_{args.sheet}_ISIN.csv"
+                write_csv_by_id(csv_out, funds_with_isin, [
+                                "name", "isin", "url"])
+                return
+        aviva_runner(id_w=id_w, max_w=max_w, sheet=args.sheet)
         return
 
     if args.merge and args.sheet:
+        # TODO: HANDLE MERGIN MF
         merge_csv_to_xlsx(xlsx, ["name", "isin", "url"], args.sheet)
         return
+
 
 #    if args.id and args.max and args.kiids:
 #        data = get_xlsx_data(xlsx, "MF")

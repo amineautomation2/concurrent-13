@@ -28,6 +28,7 @@ jobs:
           name: aviva-total
           path: json/total.json
           if-no-files-found: error
+
       - name: Commit and push changes
         uses: stefanzweifel/git-auto-commit-action@v7
         with:

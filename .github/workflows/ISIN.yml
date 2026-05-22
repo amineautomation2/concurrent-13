@@ -1,11 +1,11 @@
-name: Mutual Funds
+name: MF KIID ISIN
 
 on:
   workflow_call:
   workflow_dispatch:
 
 env:
-  ARTIFACT_NAME: results-MF-csv
+  ARTIFACT_NAME: results-kiid-isin-csv
   PROJECT_NAME: aviva
   SHEET_NAME: MF
 
@@ -14,7 +14,6 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-      #max-parallel: 3
       matrix:
         chunk: [0, 1, 2, 3, 4]
     
@@ -29,19 +28,25 @@ jobs:
 
       - name: Install Dependencies
         run: pip install -r requirements.txt
+      
+      - name: Install System Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libnspr4 libnss3 libatk1.0-0 libatk-bridge2.0-0 libcups2 libdrm2 libxkbcommon0 libxcomposite1 libxdamage1 libxrandr2 libgbm1 libasound2t64
 
       - name: Cleanup CSV
-        run: rm -rf csv/*_${{ env.SHEET_NAME }}.csv
+        run: rm -rf csv/*_ISIN.csv
       
       - name: Scrape URLs Chunk
-        run: python main.py --id ${{ matrix.chunk }} --max 5 --sheet ${{env.SHEET_NAME}}
+        run: python main.py --id ${{ matrix.chunk }} --max 5 --sheet MF --isin
 
-      - name: Upload ETF Partial Data
+      - name: Upload KIID Partial Data
         uses: actions/upload-artifact@v6
         with:
           name: ${{env.ARTIFACT_NAME}}-${{ matrix.chunk }}
-          path: csv/${{env.PROJECT_NAME}}_${{ matrix.chunk }}_${{env.SHEET_NAME}}.csv
+          path: csv/aviva_${{ matrix.chunk }}_ISIN.csv
           if-no-files-found: error
+
 
   merge-results:
     needs: worker
@@ -72,7 +77,7 @@ jobs:
           merge-multiple: true
 
       - name: Merge and Commit
-        run: python main.py --merge --sheet ${{env.SHEET_NAME}}
+        run: python main.py --merge --kiid
 
       - name: Upload Spreadsheet
         uses: actions/upload-artifact@v6
@@ -81,8 +86,16 @@ jobs:
           path: spreadsheet
           if-no-files-found: error
 
+      - name: Upload screenshots
+        uses: actions/upload-artifact@v4
+        if: always()  # Ensures this runs even if the previous test step failed
+        with:
+          name: test-screenshots
+          path: cypress/screenshots/  # Replace with your screenshot path
+          if-no-files-found: ignore   
+
       - name: Commit and push changes
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
-          commit_message: "Updated: Merge CSV Funds results"
+          commit_message: "Updated: Merge CSV KIID results"
  
