@@ -47,8 +47,6 @@ def main():
                 write_csv_by_id(csv_out, funds_with_isin, [
                                 "name", "isin", "url"])
                 return
-            aviva_runner(id_w=id_w, max_w=max_w, sheet=args.sheet)
-            return
         aviva_runner(id_w=id_w, max_w=max_w, sheet=args.sheet)
         return
 

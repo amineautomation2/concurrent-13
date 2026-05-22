@@ -28,7 +28,6 @@ def aviva_runner(id_w: int, max_w: int, sheet: str):
             worker_data = runner_config["total"][id_w::max_w]
             config = dict(worker_data=worker_data, url=url)
             runner_config.update(config)
-            return
 
     funds = aviva_pagination_per_worker(
         base_url=runner_config["url"], total_per_w=runner_config["worker_data"])
