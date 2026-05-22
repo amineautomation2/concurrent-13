@@ -2,6 +2,13 @@ import time
 import random
 from cloakbrowser import launch
 from utils import get_proxy_endpoint
+import logging
+# Configure log format to include time
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S"
+)
 
 
 def get_kiid_urls_per_worker(id_worker: int, funds: list[dict]) -> list[dict]:
@@ -25,7 +32,7 @@ def get_kiid_urls_per_worker(id_worker: int, funds: list[dict]) -> list[dict]:
     fund_index = 0
     while fund_index < len(funds):
         fund = funds[fund_index]
-        print(
+        logging.info(
             f"🕵️ [Worker {id_worker}] Processing Fund Record [{fund_index + 1}/{len(funds)}]")
         url = fund["url"]
 
@@ -35,7 +42,7 @@ def get_kiid_urls_per_worker(id_worker: int, funds: list[dict]) -> list[dict]:
         # Measure continuous time drift relative to initial context birth (10 min safety cap)
         time_elapsed = time.time() - session_start_time > (5 * 60)
         if time_elapsed:
-            print(
+            logging.warning(
                 f"⚠️ [{proxy_ip}] proxy reached max session time, generating fresh endpoint.")
             try:
                 page.close()
@@ -71,7 +78,7 @@ def get_kiid_urls_per_worker(id_worker: int, funds: list[dict]) -> list[dict]:
             if not cookie_accepted:
                 cookie_button = page.locator("#onetrust-accept-btn-handler")
                 if cookie_button.is_visible():
-                    print(
+                    logging.info(
                         f"🍪 [Worker {id_worker}] OneTrust banner found. Clicking...")
                     cookie_button.click()
                     cookie_accepted = True
@@ -90,21 +97,19 @@ def get_kiid_urls_per_worker(id_worker: int, funds: list[dict]) -> list[dict]:
                     f"✅ [Worker {id_worker}] Target extracted successfully: {kiid_url[-30:]}")
             else:
                 fund.update(kiid=None)
-                print(
+                logging.warning(
                     f"⚠️ [Worker {id_worker}] No matching KIID link element present on layout.")
 
             fund_index += 1
 
         except Exception as e:
-            print(
+            logging.exception(
                 f"❌ [Worker {id_worker}] Pipeline navigation / extraction failure: {e}")
             try:
                 page.close()
             except:
                 pass
             page = browser.new_page()
-            fund_index -= 1
-            time.sleep(10)
         # TEST
         # break
 
