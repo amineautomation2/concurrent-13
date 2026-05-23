@@ -9,16 +9,6 @@ name,isin,url
 7IM Moderately Cautious Class C Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/3395327/SelfSelectFund
 7IM Pathbuilder 1 Class 1C Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BMDPBQ8/SelfSelectFund
 7IM Pathbuilder 1 Class 1C Inc Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BMDPC09/SelfSelectFund
-Allianz Global Investors UK Index-Linked Gilt Fund Class W Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BDD4M69/SelfSelectFund
-Allianz Global Investors UK Index-Linked Gilt Fund Class W Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BDD4M70/SelfSelectFund
-Allianz Global Investors UK RiskMaster Conservative Multi Asset Class Y Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BYMVB72/SelfSelectFund
-Allianz Global Investors UK RiskMaster Growth Multi Asset Class Y Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BYMVBC7/SelfSelectFund
-Allianz Global Investors UK RiskMaster Moderate Multi Asset Class Y Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BYMVB94/SelfSelectFund
-Allianz Global Investors UK Strategic Bond Class C Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B06T936/SelfSelectFund
-Allianz Global Investors UK Total Return Asian Equity Class C Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BVYJ2G9/SelfSelectFund
-Allianz Global Investors UK Total Return Asian Equity Class C Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B1FRQV5/SelfSelectFund
-Allianz Global Investors UK UK Listed Equity Income Class C Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BP5X398/SelfSelectFund
-Allianz Global Investors UK UK Listed Equity Income Class C Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B82ZGC2/SelfSelectFund
 Artemis SmartGARP European Equity Class I Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BR4TTQ0/SelfSelectFund
 Artemis SmartGARP Global Emerging Markets Equity Class I Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BW9HL13/SelfSelectFund
 Artemis SmartGARP Global Emerging Markets Equity Class I Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BW9HL24/SelfSelectFund
@@ -159,3 +149,353 @@ Fidelity (Onshore) American Class W Accumulation,,https://www.direct.aviva.co.uk
 Fidelity (Onshore) American Special Situations Class W Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B89ST70/SelfSelectFund
 Fidelity (Onshore) Asia Class W Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B6Y7NF4/SelfSelectFund
 Fidelity (Onshore) Asia Class W Hedged Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BKDZ1H5/SelfSelectFund
+Fidelity (Onshore) UK Equity Income Class W MINC Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BYSYZM8/SelfSelectFund
+Fidelity (Onshore) UK Opportunities Class W Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BH7HNY7/SelfSelectFund
+Fidelity (Onshore) UK Opportunities Class W Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BH7HNZ8/SelfSelectFund
+Fidelity (Onshore) UK Select Class W Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BFRT394/SelfSelectFund
+Fidelity (Onshore) UK Smaller Companies Class W Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B7VNMB1/SelfSelectFund
+Fiera Capital Fiera Emerging Markets Fund Class B Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B8QB400/SelfSelectFund
+Fiera Capital Fiera OAKS EM Select Class B GBP Acc Series 1 Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BKTNQ78/SelfSelectFund
+Fiera Capital Magna MENA Class G Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BKRCML3/SelfSelectFund
+Findlay Park Findlay Park American Fund Class I GBP Distribution Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BWY58M2/SelfSelectFund
+Findlay Park Findlay Park American Fund Class I Hedged GBP Distribution Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B00J0F1/SelfSelectFund
+GAM Star Global Aggressive Class Z Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B8H60G2/SelfSelectFund
+GAM Star Global Cautious Class Z Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B8SG3C8/SelfSelectFund
+GAM Star Global Flexible Class Z Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B8GJSM4/SelfSelectFund
+GAM Star Global Moderate Class Z Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B7YJD68/SelfSelectFund
+GAM Star Global Rates Institutional Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B59CJW6/SelfSelectFund
+GAM Star Global Rates Institutional Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B59CJN7/SelfSelectFund
+GAM Star Japan Leaders Class I Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B3CTGT6/SelfSelectFund
+GAM Star Japan Leaders Class I Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B40WC07/SelfSelectFund
+GAM Star Japan Leaders Class Z Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BJN6GX2/SelfSelectFund
+GAM Sustainable Emerging Equity Class I Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B5VGBK8/SelfSelectFund
+HSBC American Index Class C Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B80QG61/SelfSelectFund
+HSBC American Index Class C Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B80QG49/SelfSelectFund
+HSBC Balanced Class C Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BG0R529/SelfSelectFund
+HSBC Balanced Class C Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BG0R4Z5/SelfSelectFund
+HSBC China Government Local Bond Index Class BCHGBPC Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BLNLDX0/SelfSelectFund
+HSBC Corporate Bond Class C Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B85KC15/SelfSelectFund
+HSBC Corporate Bond Class C Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B7X4RF1/SelfSelectFund
+HSBC Developed World Sustainable Equity Index Class C Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BN71RZ0/SelfSelectFund
+HSBC Developed World Sustainable Equity Index Class C Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BN71RY9/SelfSelectFund
+HSBC Europe Ex UK Equity Class C Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BNYFWD8/SelfSelectFund
+IFSL 7IM Defensive Strategy Class X Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BQ0KCQ1/SelfSelectFund
+IFSL 7IM Global Opportunities Class X Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BQ0KCP0/SelfSelectFund
+IFSL Arbion Balanced Opportunities Class A GBP Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BKPC925/SelfSelectFund
+IFSL Arbion Balanced Opportunities Class A GBP Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BKPC936/SelfSelectFund
+IFSL Arbion Sovereign Opportunities Class A GBP Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BKPC970/SelfSelectFund
+IFSL Arbion Sovereign Opportunities Class A GBP Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BKPC981/SelfSelectFund
+IFSL Ascot Lloyd Fund 3 Class A Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BJXFKY8/SelfSelectFund
+IFSL Ascot Lloyd Fund 3 Class A Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BJXFKZ9/SelfSelectFund
+IFSL Ascot Lloyd Fund 4 Class A Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BJXFZ21/SelfSelectFund
+IFSL Ascot Lloyd Fund 4 Class A Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BJXFL12/SelfSelectFund
+IFSL YOU Adventurous Class A Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BP6MK04/SelfSelectFund
+IFSL YOU Multi-Asset Blend Balanced Class A Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BJ022P7/SelfSelectFund
+IFSL YOU Multi-Asset Blend Cautious Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BN78XY2/SelfSelectFund
+IFSL YOU Multi-Asset Blend Growth Class A Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BJ022Q8/SelfSelectFund
+IFSL atomos Balanced Class A Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BHZ0CY1/SelfSelectFund
+IFSL atomos Balanced Class A Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BHZ0CZ2/SelfSelectFund
+IFSL atomos Cautious Class A Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BHZ0D48/SelfSelectFund
+IFSL atomos Cautious Class A Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BHZ0D59/SelfSelectFund
+IFSL atomos Conservative Class A Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BMY2M09/SelfSelectFund
+IFSL atomos Conservative Class A Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BMY2M10/SelfSelectFund
+Invesco ICVC Tactical Bond (UK) Class Z Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B8N45T8/SelfSelectFund
+Invesco ICVC Tactical Bond (UK) Class Z Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B8N45V0/SelfSelectFund
+Invesco ICVC UK Enhanced Index (UK) Class Z Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BZ8GWY2/SelfSelectFund
+Invesco ICVC UK Enhanced Index (UK) Class Z Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BZ8GWZ3/SelfSelectFund
+Invesco ICVC UK Equity High Income (UK) Class Z Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B8N46L7/SelfSelectFund
+Invesco ICVC UK Equity High Income (UK) Class Z Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B8N46M8/SelfSelectFund
+Invesco ICVC UK Equity Income (UK) Class Z Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B8N46V7/SelfSelectFund
+Invesco ICVC UK Equity Income (UK) Class Z Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B8N46W8/SelfSelectFund
+Invesco ICVC UK Opportunities (UK) Class Z Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B8N46S4/SelfSelectFund
+Invesco ICVC UK Opportunities (UK) Class Z Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B8N46T5/SelfSelectFund
+JPMorgan Fund ICVC UK Equity Core Class E Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B58L4H4/SelfSelectFund
+JPMorgan Fund ICVC UK Equity Core Class E Quarterly Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BF09LN1/SelfSelectFund
+JPMorgan Fund ICVC UK Equity Core Class E Quarterly Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BYM41F9/SelfSelectFund
+JPMorgan Fund ICVC UK Equity Growth Class C - Net Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B3FJQD7/SelfSelectFund
+JPMorgan Fund ICVC UK Equity Growth Class C - Net Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B3FJQH1/SelfSelectFund
+JPMorgan Fund ICVC UK Government Bond Class C - Gross Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BJRDD27/SelfSelectFund
+JPMorgan Fund ICVC US Equity Income Class C - Net (Hedged) Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B7N0306/SelfSelectFund
+JPMorgan Fund ICVC US Equity Income Class C Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B3FJQ48/SelfSelectFund
+JPMorgan Fund ICVC US Equity Income Class C Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B3FJQ59/SelfSelectFund
+JPMorgan Fund ICVC US Research Enhanced Index Equity Class E - Net Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BJRCPT5/SelfSelectFund
+Janus Henderson Investors European Selected Opportunities Class I Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B412VB0/SelfSelectFund
+Janus Henderson Investors European Smaller Companies Class I Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/0747642/SelfSelectFund
+Janus Henderson Investors Fixed Interest Monthly Income Class I Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BXVMC98/SelfSelectFund
+Janus Henderson Investors Fixed Interest Monthly Income Class I Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B7GSYN7/SelfSelectFund
+Janus Henderson Investors Fixed Interest Monthly Income Class IQ Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BKPJTJ3/SelfSelectFund
+Janus Henderson Investors Global Equity Income Class I Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BFDTFV4/SelfSelectFund
+Janus Henderson Investors Global Equity Income Class I Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/3126389/SelfSelectFund
+Janus Henderson Investors Global Financials Class I Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/3191923/SelfSelectFund
+Janus Henderson Investors Global High Yield Bond Class I Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BKSB1H8/SelfSelectFund
+Janus Henderson Investors Global High Yield Bond Class I Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BKSB1J0/SelfSelectFund
+Jupiter Japan Income Class I Hedged Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B6496D9/SelfSelectFund
+Jupiter Japan Income Class I Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B6QC0Z6/SelfSelectFund
+Jupiter Merian Asia Pacific Class I Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B1XG960/SelfSelectFund
+Jupiter Merian Global Equity Class I Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B1XG982/SelfSelectFund
+Jupiter Merian North American Equity Class I Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B1XG9G0/SelfSelectFund
+Jupiter Merian North American Equity Class I Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BMWRV76/SelfSelectFund
+Jupiter Merlin Balanced Portfolio Class I Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B4351D9/SelfSelectFund
+Jupiter Merlin Balanced Portfolio Class I Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B3X5X81/SelfSelectFund
+Jupiter Merlin Conservative Select Class I Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B8GDLS3/SelfSelectFund
+Jupiter Merlin Conservative Select Class I Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B8GDLV6/SelfSelectFund
+Lazard Global Equity Income Class C Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B7VB8X9/SelfSelectFund
+Lazard Global Equity Income Class C Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B7YWW37/SelfSelectFund
+Lazard Global Global Convertibles Recovery Class C Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BLD0YS9/SelfSelectFund
+Lazard Global Global Convertibles Recovery Class C Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BLD0YT0/SelfSelectFund
+Lazard Global Global Equity Franchise Class A Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BYR8Q28/SelfSelectFund
+Lazard Global Global Equity Franchise Class C Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BF2N1T7/SelfSelectFund
+Lazard Global Global Equity Franchise Class C Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BF2N1R5/SelfSelectFund
+Lazard Global Global Listed Infrastructure Equity Class A Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B5NXD34/SelfSelectFund
+Lazard Global Global Listed Infrastructure Equity Class A Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B5NJXH6/SelfSelectFund
+Lazard Global Global Listed Infrastructure Equity Class AM Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BKVD8M5/SelfSelectFund
+Legal & General Global Infrastructure Index Class I Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BF0TZG2/SelfSelectFund
+Legal & General Global Infrastructure Index Class I Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BF0TZH3/SelfSelectFund
+Legal & General Global Real Estate Dividend Index Fund I Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BYW7CN3/SelfSelectFund
+Legal & General Global Real Estate Dividend Index Fund I Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BYW7CM2/SelfSelectFund
+Legal & General Global Technology Index Trust I Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B0CNH16/SelfSelectFund
+Legal & General ICAV L&G ESG Emerging Markets Government Local Class I Unhedged Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BGXQV14/SelfSelectFund
+Legal & General ICAV L&G Emerging Markets Governement Bond (USD) Index Fund I Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BGSXHN4/SelfSelectFund
+Legal & General International Index Trust I Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B2Q6HW6/SelfSelectFund
+Legal & General International Index Trust I Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B2Q6HX7/SelfSelectFund
+Legal & General Japan Index Trust I Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B0CNGW0/SelfSelectFund
+Liontrust GF UK Growth Class C3 Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BP4KB29/SelfSelectFund
+Liontrust Global Alpha Class C Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/3119055/SelfSelectFund
+Liontrust Global Dividend Class C Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B9225P6/SelfSelectFund
+Liontrust Global Dividend Class C Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B91RFZ2/SelfSelectFund
+Liontrust Global Innovation Class C Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B8DLY47/SelfSelectFund
+Liontrust Global Innovation Class C Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B28R341/SelfSelectFund
+Liontrust Global Smaller Companies Class C Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B29MXF6/SelfSelectFund
+Liontrust Global Technology Class C Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BYXZ5N7/SelfSelectFund
+Liontrust Income Class C Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B8JCR45/SelfSelectFund
+Liontrust Income Class C Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B8L7B35/SelfSelectFund
+Liontrust UK Ethical Class 2 Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B8HCSD3/SelfSelectFund
+Liontrust UK Growth Class I Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B56BDS0/SelfSelectFund
+Liontrust UK Growth Class I Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BNGB8J2/SelfSelectFund
+Liontrust UK Micro Cap Instituional Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BDFYHP1/SelfSelectFund
+Liontrust UK Smaller Companies Class I Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B8HWPP4/SelfSelectFund
+Liontrust UK Smaller Companies Class I Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B57TMD1/SelfSelectFund
+Liontrust US Opportunities Class C Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B7K9LQ8/SelfSelectFund
+Lombard Odier All Roads Class (GBP) - NA Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BD7VGS6/SelfSelectFund
+Lombard Odier All Roads Class Syst. NAV Hdg (GBP) - ND Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BQ7XD60/SelfSelectFund
+Lombard Odier Asia High Conviction Class Syst. NAV Hdg (GBP) - NA Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BD5Z561/SelfSelectFund
+M&G Global Target Return Class I GBP Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BYM55C7/SelfSelectFund
+M&G Global Themes Class I GBP Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B4WV2P7/SelfSelectFund
+M&G Global Themes Class I GBP Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B76CZD6/SelfSelectFund
+M&G Income and Growth Class I GBP Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B4QHRP6/SelfSelectFund
+M&G Income and Growth Class I GBP Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B7FSJ22/SelfSelectFund
+M&G Index Tracker Class A GBP Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/3111095/SelfSelectFund
+M&G Index Tracker Class A GBP Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/3111084/SelfSelectFund
+M&G Index Tracker Class I GBP Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BMWBJN0/SelfSelectFund
+M&G Index Tracker Class I GBP Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BJXT794/SelfSelectFund
+M&G Index-Linked Bond Class I GBP Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B6SYH93/SelfSelectFund
+MI Chelverton MI Chelverton UK Equity Income Class B Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B1FD646/SelfSelectFund
+MI Hawksmoor Distribution Fund Class C Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BJ4GVL4/SelfSelectFund
+MI Hawksmoor Distribution Fund Class C Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BJ4GVM5/SelfSelectFund
+MI Hawksmoor Global Opportunities Fund Class C Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BG38228/SelfSelectFund
+MI Hawksmoor Vanbrugh Fund Class C Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BJ4GVQ9/SelfSelectFund
+MI Hawksmoor Vanbrugh Fund Class C Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BJ4GVR0/SelfSelectFund
+MI MA Funds MI Classic Passive Portfolio Aggressive Fund - Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BNHW560/SelfSelectFund
+MI MA Funds MI Classic Passive Portfolio Defensive Fund - Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BNHW559/SelfSelectFund
+MI MA Funds MI Global Passive Portfolio Aggressive Fund - Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BNHW582/SelfSelectFund
+MI MA Funds MI Global Passive Portfolio Defensive Fund - Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BNHW571/SelfSelectFund
+Margetts AFH DA Asia ex Japan Equity Class R Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BYXGFX0/SelfSelectFund
+Margetts AFH DA European Equity  Class R Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BYXG9P0/SelfSelectFund
+Margetts AFH DA Global Emerging Markets Equity Class R Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BYXG9R2/SelfSelectFund
+Margetts AFH DA North American Equity Class R Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BYXG9T4/SelfSelectFund
+Margetts AFH DA UK Equity Class R Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BKX8BB8/SelfSelectFund
+Margetts AFH DA UK Smaller Companies Class R Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BYXG9Y9/SelfSelectFund
+Margetts AFH Tactical Core Class R Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B8KTVT8/SelfSelectFund
+Margetts AFH Tactical Core Class R Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B8K9HG7/SelfSelectFund
+Margetts Blenheim Diversified Alternatives Class R Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BNDQ9F3/SelfSelectFund
+Margetts Blenheim Diversified Alternatives Class R Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BNDQ9D1/SelfSelectFund
+Margetts MGTS Progeny Systematic Equity Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BM8F3M3/SelfSelectFund
+Margetts MGTS Progeny Systematic ProFolio 40 Class A Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BS5WKB7/SelfSelectFund
+Margetts MGTS Progeny Systematic ProFolio 40 Class A Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BS5WK95/SelfSelectFund
+Margetts MGTS Progeny Systematic ProFolio 60 Class A Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BS5WKG2/SelfSelectFund
+Margetts MGTS Progeny Systematic ProFolio 60 Class A Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BS5WKF1/SelfSelectFund
+Margetts MGTS Progeny Systematic ProFolio 80 Class A Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BS5WKL7/SelfSelectFund
+Margetts MGTS Progeny Systematic ProFolio 80 Class A Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BS5WKK6/SelfSelectFund
+Margetts MGTS Progeny Systematic ProFolio Bond Accumulation Class Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BTRTPB8/SelfSelectFund
+Margetts MGTS Progeny Systematic ProFolio Bond Income Class Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BTRTPC9/SelfSelectFund
+Margetts MGTS Progeny Systematic ProFolio Equity Accumulation Class Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BTRTPD0/SelfSelectFund
+Montanaro Montanaro European Smaller Companies Fund GBP Institutional Class Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B3V9KZ1/SelfSelectFund
+Montanaro Montanaro UK Income Fund GBP Class Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BFFK9L3/SelfSelectFund
+Montanaro Montanaro UK Income Fund GBP Class Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BYSRYZ3/SelfSelectFund
+Morant Wright Morant Wright Fuji Yield Sterling Distribution Hedged Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BYWNV67/SelfSelectFund
+Morant Wright Morant Wright Sakura GBP Acc Hedged Class Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B840XH9/SelfSelectFund
+Morant Wright Morant Wright Sakura GBP Dist Unhedged Class Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BYWNV34/SelfSelectFund
+Morant Wright WS Morant Wright Japan Class B Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/3301012/SelfSelectFund
+Morant Wright WS Morant Wright Japan Class B Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/3359806/SelfSelectFund
+Morant Wright WS Morant Wright Nippon Yield Class B Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B42MKS9/SelfSelectFund
+Morant Wright WS Morant Wright Nippon Yield Class B Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B2R83B2/SelfSelectFund
+New Capital Global Convertible Bond GBP Acc Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BL0KY04/SelfSelectFund
+New Capital Global Equity Conviction GBP Acc Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BWGC5T7/SelfSelectFund
+New Capital Global Equity Conviction GBP Inc Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BWGC5S6/SelfSelectFund
+New Capital Global Equity Income GBP Unhedged Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BMC4XB5/SelfSelectFund
+New Capital Global Equity Income GBP Unhedged Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BMC4TZ1/SelfSelectFund
+New Capital Global Value Credit GBP Inc Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/3311668/SelfSelectFund
+New Capital Global Value Credit GBP Inc Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B3LM8Q7/SelfSelectFund
+New Capital Strategic Portfolio UCITS GBP Inc Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BTJRLV2/SelfSelectFund
+New Capital Strategic Portfolio UCITS GBP Inc Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BTJRLW3/SelfSelectFund
+New Capital Sustainable World High Yield Bond Fund GBP Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BMQ81V9/SelfSelectFund
+Oberon Capital TM Oberon UK Special Situations Fund Class B Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BTNQVG0/SelfSelectFund
+Oberon Capital TM Oberon UK Special Situations Fund Class B Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BTNQVF9/SelfSelectFund
+Octopus FP Octopus UK Future Generations Class C Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BKPC9J2/SelfSelectFund
+Octopus FP Octopus UK Future Generations Class C Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BKPC9K3/SelfSelectFund
+Octopus FP Octopus UK Micro Cap Growth Class P Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BYQ7HN4/SelfSelectFund
+Octopus FP Octopus UK Multi Cap Income Class I Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BG47Q55/SelfSelectFund
+Octopus FP Octopus UK Multi Cap Income Class I Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BG47Q66/SelfSelectFund
+Oldfield Partners LLP Overstone Global All Cap Value Class J Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B75M355/SelfSelectFund
+Oldfield Partners LLP Overstone Global All Cap Value Class J Hedged Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BYYXWV7/SelfSelectFund
+Oldfield Partners LLP Overstone Global All Cap Value Class J Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B75KB22/SelfSelectFund
+Pictet Climate Government Bonds Class HI Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BQ2HFL6/SelfSelectFund
+Pictet Climate Government Bonds Class I  Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BQ2HFY9/SelfSelectFund
+Pictet Digital Class I dy - GBP Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B50P236/SelfSelectFund
+Pictet Dynamic Asset Allocation Class I GBP Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BS6TDJ6/SelfSelectFund
+Pictet Emerging Local Currency Debt Class HI Dm - GBP Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BC7GVQ7/SelfSelectFund
+Pictet Emerging Local Currency Debt Class I dy - GBP Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B4PHD15/SelfSelectFund
+Pictet Emerging Markets Class I - GBP Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BNK9YN8/SelfSelectFund
+Pictet Emerging Markets Index Class I - GBP Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BC7GVR8/SelfSelectFund
+Pictet Emerging Markets Multi Asset Class HI dy - GBP Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BNK9Y83/SelfSelectFund
+Pictet Emerging Markets Sustainable Equities Class I Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B8J4BT4/SelfSelectFund
+Premier Miton Premier Miton Diversified Balanced Growth Class D Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BHNWGP8/SelfSelectFund
+Premier Miton Premier Miton Diversified Cautious Growth Class D Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BMQ5MN9/SelfSelectFund
+Premier Miton Premier Miton Diversified Cautious Growth Class D Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BHNZ2P9/SelfSelectFund
+Premier Miton Premier Miton Diversified Dynamic Growth Class D Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BMQ5ML7/SelfSelectFund
+Premier Miton Premier Miton Diversified Dynamic Growth Class D Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BHNWH99/SelfSelectFund
+Premier Miton Premier Miton Diversified Growth Class D Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BMQ5L21/SelfSelectFund
+Premier Miton Premier Miton Diversified Growth Class D Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B8BJV42/SelfSelectFund
+Premier Miton Premier Miton Diversified Income Class D Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BMQ5MK6/SelfSelectFund
+Premier Miton Premier Miton Diversified Income Class D Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BYPDV97/SelfSelectFund
+Premier Miton Premier Miton Diversified Responsible Growth Fund Class D Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BF1CW03/SelfSelectFund
+Quilter Investors Multi Asset (Onshore) Quilter Investors Ethical Equity Class R Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B8RZ2W9/SelfSelectFund
+Quilter Investors Multi Asset (Onshore) Quilter Investors Global Dynamic Equity Class R Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B6SF6S8/SelfSelectFund
+Quilter Investors Multi Asset (Onshore) Quilter Investors Global Unconstrained Equity Class U1 Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BJ4WYJ1/SelfSelectFund
+Quilter Investors Multi Asset (Onshore) Quilter Investors Monthly Income & Growth Portfolio Class F Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BZ00X83/SelfSelectFund
+Quilter Investors Multi Asset (Onshore) Quilter Investors Monthly Income & Growth Portfolio Class F Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BZ00X72/SelfSelectFund
+Quilter Investors Multi Asset (Onshore) Quilter Investors Monthly Income & Growth Portfolio Class U1 Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BJMXH08/SelfSelectFund
+Quilter Investors Multi Asset (Onshore) Quilter Investors Monthly Income & Growth Portfolio Class U1 Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BJMXGY5/SelfSelectFund
+Quilter Investors Multi Asset (Onshore) Quilter Investors Monthly Income Portfolio Class F Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BZ00WN1/SelfSelectFund
+Quilter Investors Multi Asset (Onshore) Quilter Investors Monthly Income Portfolio Class F Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BZ00WM0/SelfSelectFund
+Quilter Investors Multi Asset (Onshore) Quilter Investors Monthly Income Portfolio Class U1 Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BJMXGV2/SelfSelectFund
+Robeco Global SDG Credits Class IH Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BL0MHH8/SelfSelectFund
+Robeco Global SDG Equities Class IE Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/4280344/SelfSelectFund
+Robeco High Yield Bonds Class 0CH Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BYSGDM0/SelfSelectFund
+Robeco QI Dynamic High Yield Class IBH Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BNQRZ11/SelfSelectFund
+Robeco QI Dynamic High Yield Class IH Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BJ9V1W5/SelfSelectFund
+Robeco QI Emerging Conservative Equities Class F Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BVB3510/SelfSelectFund
+Robeco QI Emerging Conservative Equities Class G Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BWTNKG9/SelfSelectFund
+Robeco QI European Conservative Equities Class C Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BZ4BR80/SelfSelectFund
+Robeco QI Global Conservative Equities Class F Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BD495Q4/SelfSelectFund
+Robeco QI Global Multi Factor Credits Class IH Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BZ1C0N2/SelfSelectFund
+Royal London UK Equity Income Class M Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B8Y4ZB9/SelfSelectFund
+Royal London UK Equity Income Class M Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B3M9JJ7/SelfSelectFund
+Royal London UK Government Bond Class M Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B881TW5/SelfSelectFund
+Royal London UK Government Bond Class M Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B7QFPL3/SelfSelectFund
+Royal London UK Growth Trust Class A Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/0159797/SelfSelectFund
+Royal London UK Income with Growth Trust Class A Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/0159805/SelfSelectFund
+Royal London UK Mid-Cap Growth Class M Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B5BRW42/SelfSelectFund
+Royal London UK Smaller Companies Class M Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B3NQHL5/SelfSelectFund
+Royal London US Equity Tilit Class M Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BQ2NKT7/SelfSelectFund
+Royal London US Growth Trust Class A Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/3003835/SelfSelectFund
+Sarasin Global Equity Real Return Class P Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B7SZSV2/SelfSelectFund
+Sarasin IE Global Equity Opportunities (GBP) Class P Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B8FZ3Y0/SelfSelectFund
+Sarasin IE Global Equity Opportunities (GBP) Class P Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B8GM8B2/SelfSelectFund
+Sarasin IE Multi Asset - Defensive (GBP) Class P Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B7TZ5Q5/SelfSelectFund
+Sarasin IE Multi Asset - Defensive (GBP) Class P Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B8GG988/SelfSelectFund
+Sarasin IE Multi Asset - Dynamic (GBP) Class P Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B7WNCB0/SelfSelectFund
+Sarasin IE Multi Asset - Dynamic (GBP) Class P Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B88H774/SelfSelectFund
+Sarasin IE Multi Asset Target Return Class P Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B89QH58/SelfSelectFund
+Sarasin IE Multi Asset Target Return Class P Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B7KM684/SelfSelectFund
+Sarasin IE Thematic Global Real Estate Equity (GBP) Class P Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B8G43R9/SelfSelectFund
+Schroder ISF Global Dividend Maximiser Class Z Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BDGTSY1/SelfSelectFund
+Schroder ISF Global Energy Class Z Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BDGTTJ3/SelfSelectFund
+Schroder ISF Global Energy Transition Class C Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BK4Q6D8/SelfSelectFund
+Schroder ISF Global Energy Transition Class E Hedged Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BK4Q6F0/SelfSelectFund
+Schroder ISF Global Gold Class A Hedged Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BP4C329/SelfSelectFund
+Schroder ISF Global High Yield Class C Hedged Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B3QFGF6/SelfSelectFund
+Schroder ISF Global Inflation Linked Bond Class C Hedged Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B1VVGH7/SelfSelectFund
+Schroder ISF Global Inflation Linked Bond Class C Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B636GC0/SelfSelectFund
+Schroder ISF Global Sustainable Food and Water Class C Hedged Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BMW7228/SelfSelectFund
+Schroder ISF QEP Global ESG Class C Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BF0V405/SelfSelectFund
+Stewart Investors Asia Pacific Leaders Class VI Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BKDRZ79/SelfSelectFund
+Stewart Investors Asia Pacific and Japan Class B Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/3018408/SelfSelectFund
+Stewart Investors Asia Pacific and Japan Class B Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B57XX41/SelfSelectFund
+Stewart Investors Global Emerging Markets Class B Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B64TS99/SelfSelectFund
+Stewart Investors Global Emerging Markets Leaders Class B Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/3387454/SelfSelectFund
+Stewart Investors Indian Subcontinent All Cap Class B Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B1FXTG9/SelfSelectFund
+Stewart Investors Worldwide Class B Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B7W3061/SelfSelectFund
+Stewart Investors Worldwide Class B Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B8319S6/SelfSelectFund
+Stewart Investors Worldwide Leaders Class B Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/3097872/SelfSelectFund
+Stonehage Fleming Stonehage Fleming Global Best Ideas Equity Fund Class D Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BPGM781/SelfSelectFund
+Troy (UK) Trojan Class O Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B01BP95/SelfSelectFund
+Troy (UK) Trojan Class O Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/3424373/SelfSelectFund
+Troy (UK) Trojan Class X Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BZ6CNS3/SelfSelectFund
+Troy (UK) Trojan Class X Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BZ6CQ06/SelfSelectFund
+Troy (UK) Trojan Ethical Class O Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BJP0XX1/SelfSelectFund
+Troy (UK) Trojan Ethical Class O Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BJP0XY2/SelfSelectFund
+Troy (UK) Trojan Ethical Class X Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BKTW4R1/SelfSelectFund
+Troy (UK) Trojan Ethical Class X Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BKTW4S2/SelfSelectFund
+Troy (UK) Trojan Ethical Global Income Class O Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BNR5HJ6/SelfSelectFund
+Troy (UK) Trojan Ethical Income Class O Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BYMLFK3/SelfSelectFund
+Valu-Trac VT Esprit Tactical Alpha Plus - Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BF0Q2W8/SelfSelectFund
+Valu-Trac VT Esprit Tactical Balanced - Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BF0Q2T5/SelfSelectFund
+Valu-Trac VT Esprit Tactical Balanced - Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BN94M18/SelfSelectFund
+Valu-Trac VT Esprit Tactical Growth - Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BF0Q2V7/SelfSelectFund
+Valu-Trac VT Greystone Balanced Managed Fund Class R Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B82VQ20/SelfSelectFund
+Valu-Trac VT Greystone Balanced Managed Fund Class R Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B8HLJX7/SelfSelectFund
+Valu-Trac VT Greystone Cautious Managed Fund Class R Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B84ZNJ6/SelfSelectFund
+Valu-Trac VT Greystone Cautious Managed Fund Class R Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B8JTXR1/SelfSelectFund
+Valu-Trac VT Greystone Conservative Managed Fund Class R Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B8FBGX8/SelfSelectFund
+Valu-Trac VT Greystone Global Growth Fund Class R Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B79FLP6/SelfSelectFund
+Vanguard FTSE U.K Equity Income Index GBP Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B5B7468/SelfSelectFund
+Vanguard FTSE U.K. All Share Index Unit Trust GBP Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B3X7QG6/SelfSelectFund
+Vanguard FTSE U.K. All Share Index Unit Trust GBP Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BPN5P78/SelfSelectFund
+Vanguard Global Bond Index GBP Hedged Dist Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B2RHVP9/SelfSelectFund
+Vanguard Global Bond Index Hedged Acc Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B50W2R1/SelfSelectFund
+Vanguard Global Capital Stewards Equity Class A Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BMV9B62/SelfSelectFund
+Vanguard Global Capital Stewards Equity Class A Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BMV9B51/SelfSelectFund
+Vanguard Global Core Bond Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BS2CXP5/SelfSelectFund
+Vanguard Global Core Bond Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BS2CXQ6/SelfSelectFund
+Vanguard Global Corporate Bond Index GBP Hedged Acc Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BDFB5M5/SelfSelectFund
+WFM Aquila Opportunities Class B Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BSF1Y56/SelfSelectFund
+WFM EF 8AM Balanced Class A Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B9L57F0/SelfSelectFund
+WFM EF 8AM Cautious Class A Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B9J92G0/SelfSelectFund
+WFM EF 8AM Focussed Class A Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B9L4T62/SelfSelectFund
+WFM EF 8AM Tactical Growth Class A Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B9C65S1/SelfSelectFund
+WFM EF FACET Balanced Discretionary Portfolio (CLOSED) Class B Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B67JGM5/SelfSelectFund
+WFM EF FACET Balanced Discretionary Portfolio (CLOSED) Class B Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B3NHHK7/SelfSelectFund
+WFM EF FACET Cautious Discretionary Portfolio (CLOSED) Class B Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B3Q4TW1/SelfSelectFund
+WFM EF WM Global Trend Fund Class B Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B5B7DY9/SelfSelectFund
+WFM EF WM Global Trend Fund Class B Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B4Q6742/SelfSelectFund
+WS Sequel WS Sequel Real Assets Diversified Fund Retail Class Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BMNQP81/SelfSelectFund
+WS T. Bailey Global Thematic Equity A  Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/0934648/SelfSelectFund
+WS T. Bailey Multi-Asset Dynamic A Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B1LB2Z7/SelfSelectFund
+WS T. Bailey Multi-Asset Dynamic A Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B1385S0/SelfSelectFund
+WS T. Bailey Multi-Asset Growth Class S Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BPR9ST9/SelfSelectFund
+WS T. Bailey Multi-Asset Growth Class S Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BPR9SV1/SelfSelectFund
+WS T. Bailey UK Responsibly Invested Equity Class S Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BPRB1Q3/SelfSelectFund
+WS Zennor WS Zennor Japan Equity Income Class B  Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BQRH599/SelfSelectFund
+WS Zennor WS Zennor Japan Equity Income Class B  Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BQRH5B1/SelfSelectFund
+Waverton Absolute Return Class P Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BGCYWX8/SelfSelectFund
+abrdn OEIC abrdn Europe Ex UK Equity Class I Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B0LG6P3/SelfSelectFund
+abrdn OEIC abrdn Europe ex UK Ethical Equity Class I Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B1ZB0P9/SelfSelectFund
+abrdn OEIC abrdn Europe ex UK Income Equity Class I Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B3L7SB7/SelfSelectFund
+abrdn OEIC abrdn Europe ex UK Income Equity Class I Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B3L7S95/SelfSelectFund
+abrdn OEIC abrdn European Equity Enhanced Index Class B Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BRJL7X4/SelfSelectFund
+abrdn OEIC abrdn European Real estate Share Class I Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BWK2690/SelfSelectFund
+abrdn OEIC abrdn European Real estate Share Class I Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BWK2689/SelfSelectFund
+abrdn OEIC abrdn European Smaller Companies Fund Class I Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B0XWN58/SelfSelectFund
+abrdn OEIC abrdn Global Balanced Growth Class I Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/0433167/SelfSelectFund
+abrdn OEIC abrdn Global Balanced Growth Class I Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/0433156/SelfSelectFund
+abrdn OEIC abrdn UK Smaller Companies Class I Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/0433349/SelfSelectFund
+abrdn OEIC abrdn UK Sustainable Equity Class I Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B131GD1/SelfSelectFund
+abrdn OEIC abrdn UK Sustainable Equity Class I Income,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B131GH5/SelfSelectFund
+abrdn OEIC abrdn UK Value Equity Class I Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B0LD3C0/SelfSelectFund
+abrdn OEIC abrdn World Equity Enhanced Index Class B Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BRJL7Z6/SelfSelectFund
+abrdn SICAV All China Sustainable Equity Class X Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B7VZVD2/SelfSelectFund
+abrdn SICAV Asia Pacific Sustainable Equity Class X Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B7M3B91/SelfSelectFund
+abrdn SICAV Asian Smaller Companies Class X Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/B8GQ580/SelfSelectFund
+abrdn SICAV Climate Transition Bond Class X Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BMCDYR5/SelfSelectFund
+abrdn SICAV Emerging Markets Bond Class X Accumulation,,https://www.direct.aviva.co.uk/wealth/FundChoice/SelfSelectFundsList/FundDetails/BXNTCH5/SelfSelectFund
