@@ -74,7 +74,7 @@ def get_kiid_url(id_w: int, data_per_worker: list[dict]):
     # get isin from pdf
     isins = []
     session_start_time = time.time()
-    MAX_SESSION_TIME_SECOND = 5 * 60
+    MAX_SESSION_TIME_SECOND = 7 * 60
     proxy_dict = get_proxy_endpoint()
     session_proxy = proxy_dict["proxy"]
     for data in data_per_worker:
@@ -87,7 +87,7 @@ def get_kiid_url(id_w: int, data_per_worker: list[dict]):
             isin = isin_from_pdf(data["kiid"], session_proxy)
             isins.append(dict(name=data.get("name"),
                          isin=isin, url=data.get("url")))
-            delay(1.5, 2.5)
+            delay(2, 3)
         # TEST
         # break
     return isins
