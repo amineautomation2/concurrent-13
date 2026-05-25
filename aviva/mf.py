@@ -167,11 +167,11 @@ def get_kiid_urls_per_worker(id_worker: int, funds: list[dict]) -> list[dict]:
     # AKAMAI CADENCE BREAKER STATE
     # ----------------------------------------------------
     page_count_since_break = 0
-    PAGES_BEFORE_COOLDOWN = random.randint(7, 11)
-    COOLDOWN_DURATION = (25, 45)
+    PAGES_BEFORE_COOLDOWN = random.randint(20, 30)
+    COOLDOWN_DURATION = (25, 30)
 
     # Guard: reading pause can fire at most once every N successful pages
-    MIN_PAGES_BETWEEN_READING_PAUSE = 3
+    MIN_PAGES_BETWEEN_READING_PAUSE = 20
     # allow on first eligible page
     pages_since_last_reading_pause = MIN_PAGES_BETWEEN_READING_PAUSE
 
@@ -324,7 +324,7 @@ def get_kiid_urls_per_worker(id_worker: int, funds: list[dict]) -> list[dict]:
 
             # Reset cadence window after any failure; be conservative next round
             page_count_since_break = 0
-            PAGES_BEFORE_COOLDOWN = random.randint(5, 8)
+            PAGES_BEFORE_COOLDOWN = random.randint(15, 25)
 
             # ----------------------------------------------------------------
             # CONNECTION_CLOSED: Hard TCP block — rotate proxy immediately,
@@ -362,7 +362,7 @@ def get_kiid_urls_per_worker(id_worker: int, funds: list[dict]) -> list[dict]:
                     fund_index += 1
                     retry_count = 0
                     proxy_rotation_count = 0
-                    PAGES_BEFORE_COOLDOWN = random.randint(7, 11)
+                    PAGES_BEFORE_COOLDOWN = random.randint(20, 30)
 
             # ----------------------------------------------------------------
             # TIMEOUT: Akamai slow-lane — force cooldown to reset session score,
@@ -405,7 +405,7 @@ def get_kiid_urls_per_worker(id_worker: int, funds: list[dict]) -> list[dict]:
                         fund_index += 1
                         retry_count = 0
                         proxy_rotation_count = 0
-                        PAGES_BEFORE_COOLDOWN = random.randint(7, 11)
+                        PAGES_BEFORE_COOLDOWN = random.randint(20, 30)
 
             # ----------------------------------------------------------------
             # NETWORK / UNKNOWN: Standard graduated backoff, skip after MAX_RETRIES
@@ -425,7 +425,7 @@ def get_kiid_urls_per_worker(id_worker: int, funds: list[dict]) -> list[dict]:
                     fund_index += 1
                     retry_count = 0
                     proxy_rotation_count = 0
-                    PAGES_BEFORE_COOLDOWN = random.randint(7, 11)
+                    PAGES_BEFORE_COOLDOWN = random.randint(20, 30)
 
             page = browser.new_page()
             _block_assets(page)
