@@ -151,7 +151,6 @@ def get_kiid_urls_per_worker(id_worker: int, funds: list[dict]) -> list[dict]:
     session_start_time = time.time()
 
     cookie_accepted = False
-    funds = []
 
     # ----------------------------------------------------
     # POINTER & RETRY STATE
