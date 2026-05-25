@@ -5,7 +5,7 @@ from aviva.mf import get_kiid_urls_per_worker
 from aviva.total import aviva_total
 from utils import clean_spreadsheet, get_xlsx_filepath
 from aviva import aviva_runner
-from worker import get_xlsx_data, merge_csv_to_xlsx, read_csv, write_csv_by_id
+from worker import get_data_by_worker_id, get_xlsx_data, merge_csv_to_xlsx, read_csv, write_csv_by_id
 
 
 def main():
@@ -31,9 +31,10 @@ def main():
         if args.sheet == "MF":
             if args.kiid:
                 funds = get_xlsx_data(xlsx, args.sheet)
+                funds_per_w = get_data_by_worker_id(id_w, max_w, funds)
                 csv_out = f"aviva_{id_w}_{args.sheet}_URL.csv"
                 funds_kiid = get_kiid_urls_per_worker(
-                    id_worker=id_w, funds=funds)
+                    id_worker=id_w, funds=funds_per_w)
                 write_csv_by_id(csv_out, funds_kiid, [
                                 "name", "isin", "url", "kiid"])
                 return
